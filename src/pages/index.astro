@@ -3,6 +3,743 @@ import Layout from "../layouts/Layout.astro";
 import PainterHero from "../components/PainterHero.astro";
 ---
 
-<Layout title="Premium Residential Painting — Bucks County">
-  <PainterHero />
+<Layout title="Bucks County Painters | Meticulous Craftsmanship">
+  <!-- ═══════ Top App Bar ═══════ -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-surface-variant/30"
+  >
+    <div
+      class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4"
+    >
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">brush</span>
+        <span
+          class="text-xl sm:text-2xl font-semibold text-primary font-headline tracking-tight"
+        >
+          Bucks County Painters
+        </span>
+      </div>
+      <div class="hidden md:flex gap-6 lg:gap-8 items-center">
+        <a
+          class="text-tertiary font-bold border-b-2 border-primary pb-1 font-headline tracking-tight"
+          href="#">Gallery</a
+        >
+        <a
+          class="text-on-surface opacity-80 hover:opacity-100 transition-opacity duration-300 font-headline tracking-tight"
+          href="#">Services</a
+        >
+        <a
+          class="text-on-surface opacity-80 hover:opacity-100 transition-opacity duration-300 font-headline tracking-tight"
+          href="#">Process</a
+        >
+        <button
+          class="bg-tertiary text-on-tertiary px-5 lg:px-6 py-2 rounded-lg font-bold transition-transform duration-200 scale-95 hover:scale-100 cursor-pointer"
+        >
+          Get Estimate
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pb-20 md:pb-0">
+    <!-- ═══════ 1. Hero ═══════ -->
+    <PainterHero />
+
+    <!-- ═══════ 2. Trust Bar ═══════ -->
+    <section class="bg-surface-container py-6 sm:py-8 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 items-center opacity-80"
+          data-reveal
+        >
+          <div class="flex items-center gap-3 justify-center">
+            <span
+              class="material-symbols-outlined text-primary text-2xl sm:text-3xl"
+              style="font-variation-settings: 'FILL' 1;">star</span
+            >
+            <span
+              class="font-label text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.15em] font-bold"
+              >5-Star Google Reviews</span
+            >
+          </div>
+          <div class="flex items-center gap-3 justify-center">
+            <span
+              class="material-symbols-outlined text-primary text-2xl sm:text-3xl"
+              >history</span
+            >
+            <span
+              class="font-label text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.15em] font-bold"
+              >20+ Years Experience</span
+            >
+          </div>
+          <div class="flex items-center gap-3 justify-center">
+            <span
+              class="material-symbols-outlined text-primary text-2xl sm:text-3xl"
+              >location_on</span
+            >
+            <span
+              class="font-label text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.15em] font-bold"
+              >Bucks County Owned</span
+            >
+          </div>
+          <div class="flex items-center gap-3 justify-center">
+            <span
+              class="material-symbols-outlined text-primary text-2xl sm:text-3xl"
+              >verified</span
+            >
+            <span
+              class="font-label text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.15em] font-bold"
+              >Premium Paints</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 3. Services Overview ═══════ -->
+    <section class="bg-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="mb-10 sm:mb-12 md:mb-16" data-reveal>
+          <h2
+            class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] text-primary mb-4"
+          >
+            Masterful Services
+          </h2>
+          <div class="h-1 w-20 sm:w-24 bg-primary-container"></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10 xl:gap-12"
+        >
+          <!-- Interior -->
+          <div
+            class="bg-surface-container-lowest overflow-hidden group shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            data-reveal
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                alt="Modern minimalist bedroom with smooth charcoal grey accent wall and crisp white trim details"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XIWQZnOZngyWNNuUKohdH3tLcuQxy0XXXA8t5TJgEluHewVBgG7nhIYRL3KSFgI41I1ftdZtcGND8s_cJRf7etvsb3h7ivNveaTjqdbly3_X8Y9wUvuuqw98EmfxPF1FzVLidD0LC4fhWT1UCo4rASkWW4-2dTER9PLzgHgFboIcDTvmkUjocUyUdu_oJHGiPkCD5DoCiD8J992C0OsO9AgWMLD2aWm-ZPhFT7Jb-GalSDMtb-pIGDpxgxg6FEn-jTVnvAg7DJs"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 sm:p-8">
+              <h3 class="font-headline text-xl sm:text-2xl mb-3">
+                Interior Painting
+              </h3>
+              <p
+                class="font-body text-on-surface-variant leading-relaxed mb-6 text-sm sm:text-base"
+              >
+                Wall-to-wall precision including trim, crown molding, and
+                ceiling finishes.
+              </p>
+              <a
+                class="inline-block border-b-2 border-primary-container pb-1 text-primary font-bold text-xs sm:text-sm uppercase tracking-widest hover:border-primary transition-colors"
+                href="#">Explore Interior</a
+              >
+            </div>
+          </div>
+
+          <!-- Exterior -->
+          <div
+            class="bg-surface-container-lowest overflow-hidden group shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            data-reveal
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                alt="Well-maintained historic colonial house in Bucks County with fresh white siding and navy blue shutters"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPG5J0bPo-gzfFNMicWfQu0CT2fKMGIho0evSipnk399b1HfT4bmN6x6SoCmpLyS-8ZbP_bv5i8q-zELpuaQi6a7BRMKRHY2KktFaJJev2tdZ_iWYdP411kQf2GWTRuBlDRW5yoWC_HY3nie_mcsKkzGynKQfK_9l9uNWOi_pDEZmYeh8y5qY_mcuazP0OVOLGSOhCHlfGXkinpIkoYavIKLH4XOK6SYcI01j604R_Wm0vuqvcxTJ6BrTH3Iu5sl_D3pH2vr2jYA"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 sm:p-8">
+              <h3 class="font-headline text-xl sm:text-2xl mb-3">
+                Exterior Refinishing
+              </h3>
+              <p
+                class="font-body text-on-surface-variant leading-relaxed mb-6 text-sm sm:text-base"
+              >
+                Weather-resistant protection for siding, shutters, and masonry
+                elements.
+              </p>
+              <a
+                class="inline-block border-b-2 border-primary-container pb-1 text-primary font-bold text-xs sm:text-sm uppercase tracking-widest hover:border-primary transition-colors"
+                href="#">Explore Exterior</a
+              >
+            </div>
+          </div>
+
+          <!-- Decks -->
+          <div
+            class="bg-surface-container-lowest overflow-hidden group shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 sm:col-span-2 md:col-span-1"
+            data-reveal
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                alt="Outdoor cedar wood deck with fresh semi-transparent stain showing rich wood grain and water-beading protection"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1lMb9tsFrHRrTCCT_JNSNTWe_jdpkOB0RfEGMWhrHNdmo3Cok7AL4AEInCcqSmrhH9nLvGMGsqPr74PdoI2SV5gQwfsZRHNUpNeVRQxJ0K0azw06z5V6-5fVmCVvzib-a_ZZFeIZ71p0YLD1Yr9gc51iF2cGQ6Jqiak5bGF9nYTrMOJo4aFTlOyQGAGSVvey2m3IYopYofvxzMu-4PAXgMCGvCnZyGbJ_JBcJiXawvlrW7eewJ3V4_GTk3zJ-NT0g3SR81jGiYE"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 sm:p-8">
+              <h3 class="font-headline text-xl sm:text-2xl mb-3">
+                Deck &amp; Wood Care
+              </h3>
+              <p
+                class="font-body text-on-surface-variant leading-relaxed mb-6 text-sm sm:text-base"
+              >
+                Comprehensive staining and sealing to preserve your outdoor
+                living spaces.
+              </p>
+              <a
+                class="inline-block border-b-2 border-primary-container pb-1 text-primary font-bold text-xs sm:text-sm uppercase tracking-widest hover:border-primary transition-colors"
+                href="#">Explore Decks</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 4. About Teaser ═══════ -->
+    <section class="bg-secondary text-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 overflow-hidden relative">
+      <div
+        class="absolute inset-0 opacity-[0.035] mix-blend-overlay pointer-events-none"
+        aria-hidden="true"
+        style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;); background-size: 200px 200px;"
+      >
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div
+          class="flex flex-col md:flex-row items-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24"
+        >
+          <div class="w-full md:w-1/2 relative" data-reveal>
+            <div
+              class="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-full h-full border-2 border-primary-container z-0"
+            >
+            </div>
+            <img
+              alt="Professional painter Ben with a warm smile, wearing a paint-flecked apron, standing in a brightly lit studio environment"
+              class="relative z-10 w-full aspect-square object-cover shadow-2xl"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WVoQkQGf9Gt_naZg94gtjLkB8lgm3HqhnkmQSz36FhvdYNEuLNGPuqhHtJKezbP0PfMUWiVo3cnSoInUni88LK_8ObxLqZihzj7eqJgoZHBe1W0oGrJ7rzTjKiMFbFxL-VUyQJX6liQdECBUDgdoFog_OEl5rb7rSfyEeU61BmxA3YvXGgFWDaknwy8SsFPnbxk-mVMbQit9enhTqFuFiwBFRJEJOxIKAYflK3CRra7etcGHs-fV-OcnZT25PT1bkgyz1b28BTQ"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-full md:w-1/2" data-reveal>
+            <span
+              class="font-label text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-primary-container mb-3 sm:mb-4 block"
+              >Our Story</span
+            >
+            <h2
+              class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] mb-6 sm:mb-8 leading-tight"
+            >
+              Heritage, Hands, and Heart.
+            </h2>
+            <p
+              class="font-body text-base sm:text-lg leading-relaxed text-surface/80 mb-6 sm:mb-8"
+            >
+              Ben started Bucks County Painters with a simple ladder and a
+              profound respect for the historic architecture of Doylestown.
+              Today, that same dedication to the "old world" craft drives every
+              stroke. We don't just cover walls; we preserve the character of
+              your most valuable asset.
+            </p>
+            <a
+              class="group inline-flex items-center gap-3 text-primary-container font-bold text-base sm:text-lg"
+              href="#"
+            >
+              Meet the Owner
+              <span
+                class="material-symbols-outlined transition-transform group-hover:translate-x-2"
+                >arrow_right_alt</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 5. Portfolio Preview ═══════ -->
+    <section class="bg-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 sm:mb-12 md:mb-16" data-reveal>
+          <h2
+            class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] text-primary mb-4"
+          >
+            A Legacy of Excellence
+          </h2>
+          <p class="font-body text-on-surface-variant text-sm sm:text-base">
+            Selected transformations from across the county.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8"
+          data-reveal
+        >
+          <div
+            class="col-span-2 row-span-2 aspect-square md:aspect-auto overflow-hidden rounded-sm group"
+          >
+            <img
+              alt="Elegant luxury living room with high ceilings, soft cream walls, gold accents, and masterfully painted ornate crown molding"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-YEBQH7bswO-5atb1gQjJ_gPOzEVRkv1q995Qh2qK6CWCez7yZ5Pg1HDkpMw0l6xNiPs1TnPX7wHFQa5rDZ5AabSKa5vbMeQ6xoSS8iffdK9EuRXlbjk_o3cBa3Lh3mXH6s84aSAW0vLZCK1sr6fzL7v2TK0L5uctZwlBK1mCpYEmy4ZZPJ0pvriZ1Y1zNfU1FeLL9JNMph7U-7KqlxKlXz_ilzz1KsQcZ0j59kWiIMHbvSWJyoi4xSlZzu4uFlwZkqbj72AM7E"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-square overflow-hidden rounded-sm group">
+            <img
+              alt="Traditional Bucks County colonial home with fresh slate grey siding and crisp white window casing"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJmnzHsEBONJp8EoxoUYkY8aNU96y8uqFIhTEwj5j4nmdshMU27SJDhbt0FaowcrFjfXqo8z_YHSeN3pOtDNmoc3Htma2wrhadE4Etgeodps3Z5Or8wHEnz2IlegPKHFSA5v7zjui7S-nntkebb_oqlGlHePgJDOLnYusr06MVbpm5DXi5_vf8UerT4lCjosrzdakBRHY2YivRCg1_SVJTH-yd_u41zwvVS1J4sm88fRrk2g1Cyd75pzhmeIThZ1pWwGkD-jHbdi0"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-square overflow-hidden rounded-sm group">
+            <img
+              alt="A clean, professionally stained redwood deck with a rich, semi-transparent finish highlighting the wood grain"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuArroNn32xYtx-vxPMLq_M0qSyort1QmVSIJLQDPcnk10GAaxXODlGVVowo_QJbywYd0gC1y3EKdFqqlvX89hAdCQuVg9FIt9e7Bejf4SexP2xMJqJKiza2Elhx21xU72wM9L2bO57MNZDS5NS6djCD260wsei2AUTamuocGDmTrXdjKHeePXtNEDfP-2_qEdr8GkzpWB6zVyS7n42hvjb0auPUvWE8rUeDcVs5O6HO5xjK7rAyA8sbAETgc0pDVDXTH0TIW6YbeQA"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-square overflow-hidden rounded-sm group">
+            <img
+              alt="Close-up of perfectly executed wainscoting and baseboard paint in a soft satin finish"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKcQgLnJNh7IwGUxNM7wO6JBwHtgWfbTTjtcinWUzT7FqXhDj5jG7mSx9g1CSIrdH85BfV4GL2qgmwBnnv4aOQakOJN6IY1ASnY643j40CSg9YNwDBnXygU7qhaQOrTAmg-89OE63T964GlH9RmzJraYY1gwsQt8K9jfRW4LSkQUFICAeGgFAcRbA5CTYDXcVoiNa7HnPeiVXFlA4wJa5fmxIkwR3Lz0K6cz1IpX45RPaAr2xi6fGUKQeXygMo_pe0m_tpfuv09xo"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-square overflow-hidden rounded-sm group">
+            <img
+              alt="Kitchen featuring custom-painted navy blue cabinets with brass hardware"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC88vmPscUHBdiyVHOFybAjsDMc2cHQb6SDXK7vncVHdGAmaJTOWMcQcscZrkoRsl7R35A4BlqhLK4F2v2s0srgPLjyU-X9IAn6qPJx7ypfcPEjm7TrZBraFbSLvwU8XLrmVVaV85FVZys6ooc7LCUujJ07IOw5nFRXTFuK-43brBu36MTZBQSNkorkYk823Xva1_l7SNWpIa6My_YhjVHEOmyXW4gZWlElXq8xYsVCBKQIt9Mjes-PzWgW4odQfYf2XWVXINvPmdE"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 6. Testimonials ═══════ -->
+    <section
+      class="bg-surface-container-low py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center" data-reveal>
+        <span
+          class="material-symbols-outlined text-primary-container text-5xl sm:text-6xl mb-4 sm:mb-6 block"
+          style="font-variation-settings: 'FILL' 1;">format_quote</span
+        >
+        <div class="space-y-10 sm:space-y-12">
+          <div>
+            <p
+              class="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] italic leading-tight text-on-surface mb-6 sm:mb-8"
+            >
+              &ldquo;The attention to detail was unlike any contractor we've ever
+              hired. Ben and his team treated our 1850s farmhouse with such
+              care.&rdquo;
+            </p>
+            <div class="flex justify-center gap-1 mb-3 sm:mb-4">
+              {
+                Array.from({ length: 5 }).map(() => (
+                  <span
+                    class="material-symbols-outlined text-tertiary"
+                    style="font-variation-settings: 'FILL' 1;"
+                  >
+                    star
+                  </span>
+                ))
+              }
+            </div>
+            <h4
+              class="font-label text-xs sm:text-sm uppercase tracking-widest font-bold"
+            >
+              Sarah &amp; Tom, Doylestown
+            </h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 7. Process Section ═══════ -->
+    <section class="bg-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 relative"
+          data-reveal
+        >
+          <div class="relative z-10 text-center">
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 bg-primary text-surface rounded-full flex items-center justify-center font-headline text-xl sm:text-2xl mx-auto mb-5 sm:mb-6"
+            >
+              1
+            </div>
+            <h3 class="font-headline text-xl sm:text-2xl mb-3 sm:mb-4">
+              The Estimate
+            </h3>
+            <p
+              class="font-body text-on-surface-variant text-sm sm:text-base max-w-xs mx-auto"
+            >
+              A detailed walkthrough and written proposal with transparent
+              line-item pricing.
+            </p>
+          </div>
+          <div class="relative z-10 text-center">
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 bg-primary text-surface rounded-full flex items-center justify-center font-headline text-xl sm:text-2xl mx-auto mb-5 sm:mb-6"
+            >
+              2
+            </div>
+            <h3 class="font-headline text-xl sm:text-2xl mb-3 sm:mb-4">
+              The Prep
+            </h3>
+            <p
+              class="font-body text-on-surface-variant text-sm sm:text-base max-w-xs mx-auto"
+            >
+              The secret to longevity. We sand, caulk, and prime until the
+              surface is flawless.
+            </p>
+          </div>
+          <div class="relative z-10 text-center">
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 bg-primary text-surface rounded-full flex items-center justify-center font-headline text-xl sm:text-2xl mx-auto mb-5 sm:mb-6"
+            >
+              3
+            </div>
+            <h3 class="font-headline text-xl sm:text-2xl mb-3 sm:mb-4">
+              The Paint
+            </h3>
+            <p
+              class="font-body text-on-surface-variant text-sm sm:text-base max-w-xs mx-auto"
+            >
+              Application of premium Sherwin-Williams or Benjamin Moore finishes
+              with master-level technique.
+            </p>
+          </div>
+          <div
+            class="hidden md:block absolute top-7 lg:top-8 left-[15%] right-[15%] h-px bg-outline-variant z-0"
+          >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 8. Service Area ═══════ -->
+    <section class="bg-secondary text-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 overflow-hidden relative">
+      <div
+        class="absolute inset-0 opacity-[0.035] mix-blend-overlay pointer-events-none"
+        aria-hidden="true"
+        style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;); background-size: 200px 200px;"
+      >
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24 relative z-10"
+      >
+        <div class="w-full md:w-1/2" data-reveal>
+          <h2
+            class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] mb-6 sm:mb-8"
+          >
+            Serving All of Bucks County
+          </h2>
+          <ul
+            class="grid grid-cols-2 gap-3 sm:gap-4 font-body text-surface/80 text-sm sm:text-base"
+          >
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-container rounded-full"
+              ></span> Doylestown
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-container rounded-full"
+              ></span> New Hope
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-container rounded-full"
+              ></span> Newtown
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-container rounded-full"
+              ></span> Yardley
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-container rounded-full"
+              ></span> Buckingham
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-container rounded-full"
+              ></span> Solebury
+            </li>
+          </ul>
+        </div>
+        <div
+          class="w-full md:w-1/2 relative aspect-video bg-surface/5 rounded-lg overflow-hidden flex items-center justify-center border border-surface/10"
+          data-reveal
+        >
+          <img
+            alt="Bucks County Region Map"
+            class="w-full h-full object-cover opacity-40 mix-blend-overlay"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwTwEcyZlYBjONbI0Fqq-Tv210iC9x8p4gXvzjfZ5dn-ahwnEqJAq0GBxK2fpHvrgW9AEAcMhBNZAQWHloE77sw6OKKusdQhXoA76Lo4BSKM0eewlzL5BlHnxW8W0NWa8zI8ppaW8E8VS-NFTOM-g99PgK4eQAR4VGN4TAixhT_439pyi3ZknYpmfJFZvycuO8aRfPVyVAXxNarAvsMDOyHJgHoGxD8rOSK_qzbN_UfmgEHcjXLWK_R0972wlmluagyqs96nJPUbg"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-primary-container blur-2xl opacity-30 animate-pulse"
+              >
+              </div>
+              <span
+                class="material-symbols-outlined text-primary-container text-5xl sm:text-6xl relative"
+                style="font-variation-settings: 'FILL' 1;">location_on</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ 9. CTA Form ═══════ -->
+    <section
+      class="bg-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
+      id="estimate"
+    >
+      <div
+        class="max-w-4xl mx-auto px-4 sm:px-6"
+        data-reveal
+      >
+        <div class="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-lg shadow-xl">
+          <div class="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2
+              class="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] mb-3 sm:mb-4"
+            >
+              Ready to Transform Your Home?
+            </h2>
+            <p
+              class="font-body text-on-surface-variant text-sm sm:text-base"
+            >
+              Complete the form below for a complimentary, no-obligation
+              estimate.
+            </p>
+          </div>
+
+          <form class="space-y-6 sm:space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              <div class="relative">
+                <input
+                  class="w-full bg-transparent border-0 border-b-2 border-outline-variant py-3 focus:border-primary focus:ring-0 transition-colors peer placeholder-transparent text-on-surface"
+                  id="name"
+                  placeholder="Full Name"
+                  type="text"
+                />
+                <label
+                  class="absolute left-0 -top-3.5 text-on-surface-variant text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm font-label uppercase tracking-widest"
+                  for="name">Full Name</label
+                >
+              </div>
+              <div class="relative">
+                <input
+                  class="w-full bg-transparent border-0 border-b-2 border-outline-variant py-3 focus:border-primary focus:ring-0 transition-colors peer placeholder-transparent text-on-surface"
+                  id="phone"
+                  placeholder="Phone Number"
+                  type="tel"
+                />
+                <label
+                  class="absolute left-0 -top-3.5 text-on-surface-variant text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm font-label uppercase tracking-widest"
+                  for="phone">Phone Number</label
+                >
+              </div>
+            </div>
+            <div class="relative">
+              <select
+                class="w-full bg-transparent border-0 border-b-2 border-outline-variant py-3 focus:border-primary focus:ring-0 transition-colors appearance-none font-label uppercase tracking-widest text-sm text-on-surface-variant cursor-pointer"
+                id="service"
+              >
+                <option value="">Select Service Type</option>
+                <option value="interior">Interior Painting</option>
+                <option value="exterior">Exterior Painting</option>
+                <option value="deck">Deck Staining</option>
+                <option value="commercial">Commercial</option>
+              </select>
+            </div>
+            <div class="text-center pt-4 sm:pt-6 md:pt-8">
+              <button
+                class="bg-tertiary text-on-tertiary px-8 sm:px-10 md:px-12 py-4 sm:py-5 rounded-lg font-bold text-base sm:text-lg transition-transform hover:scale-105 active:scale-95 shadow-lg cursor-pointer"
+                type="submit"
+              >
+                Request Free Estimate
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════ Footer ═══════ -->
+  <footer
+    class="bg-on-secondary-fixed-variant w-full mt-12 sm:mt-16 text-surface font-body font-light tracking-wide"
+  >
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20 max-w-7xl mx-auto"
+    >
+      <div>
+        <span
+          class="font-headline text-2xl sm:text-3xl text-primary-container mb-4 sm:mb-6 block"
+          >Bucks County Painters</span
+        >
+        <p class="text-surface/80 leading-relaxed max-w-xs text-sm sm:text-base">
+          Fine architectural painting and restoration for distinguished homes in
+          Pennsylvania.
+        </p>
+        <div class="mt-6 sm:mt-8 flex gap-4 items-center">
+          <span class="material-symbols-outlined text-primary-container"
+            >phone</span
+          >
+          <span class="text-sm sm:text-base">(215) 555-0123</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 sm:gap-8">
+        <div class="space-y-3 sm:space-y-4">
+          <h4
+            class="text-primary-container font-bold uppercase text-[10px] sm:text-xs tracking-[0.2em] mb-4 sm:mb-6"
+          >
+            Navigation
+          </h4>
+          <a
+            class="block text-surface/80 hover:text-primary-container transition-colors duration-300 text-sm sm:text-base"
+            href="#">Portfolio</a
+          >
+          <a
+            class="block text-surface/80 hover:text-primary-container transition-colors duration-300 text-sm sm:text-base"
+            href="#">Residential</a
+          >
+          <a
+            class="block text-surface/80 hover:text-primary-container transition-colors duration-300 text-sm sm:text-base"
+            href="#">Commercial</a
+          >
+        </div>
+        <div class="space-y-3 sm:space-y-4">
+          <h4
+            class="text-primary-container font-bold uppercase text-[10px] sm:text-xs tracking-[0.2em] mb-4 sm:mb-6"
+          >
+            Legal
+          </h4>
+          <a
+            class="block text-surface/80 hover:text-primary-container transition-colors duration-300 text-sm sm:text-base"
+            href="#">Privacy Policy</a
+          >
+          <a
+            class="block text-surface/80 hover:text-primary-container transition-colors duration-300 text-sm sm:text-base"
+            href="#">Terms of Service</a
+          >
+        </div>
+      </div>
+
+      <div>
+        <h4
+          class="text-primary-container font-bold uppercase text-[10px] sm:text-xs tracking-[0.2em] mb-4 sm:mb-6"
+        >
+          Credential
+        </h4>
+        <p class="text-surface/80 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+          &copy; 2024 Bucks County Painters. Fully Licensed &amp; Insured.
+          PA#123456
+        </p>
+        <div class="flex gap-4">
+          <div
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-surface/20 flex items-center justify-center hover:bg-primary-container hover:text-primary transition-all cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-sm">public</span>
+          </div>
+          <div
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-surface/20 flex items-center justify-center hover:bg-primary-container hover:text-primary transition-all cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-sm"
+              >alternate_email</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ Mobile Bottom Nav ═══════ -->
+  <nav
+    class="fixed bottom-0 w-full z-50 md:hidden bg-surface border-t border-on-surface/10 shadow-[0_-4px_24px_rgba(0,0,0,0.05)]"
+  >
+    <div class="flex justify-around items-center h-14 sm:h-16">
+      <a
+        class="flex flex-col items-center justify-center text-on-surface/60 vibration-feedback transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined text-xl">collections</span>
+        <span class="font-label text-[9px] sm:text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1"
+          >Gallery</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-on-surface/60 vibration-feedback transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined text-xl">format_paint</span>
+        <span class="font-label text-[9px] sm:text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1"
+          >Services</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-on-surface/60 vibration-feedback transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined text-xl">architecture</span>
+        <span class="font-label text-[9px] sm:text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1"
+          >Process</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-tertiary vibration-feedback transition-all"
+        href="#estimate"
+      >
+        <span
+          class="material-symbols-outlined text-xl"
+          style="font-variation-settings: 'FILL' 1;">calculate</span
+        >
+        <span class="font-label text-[9px] sm:text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1"
+          >Estimate</span
+        >
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════ Scroll Reveal Observer ═══════ -->
+  <script>
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!reduceMotion) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((el) => observer.observe(el));
+    } else {
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((el) => el.classList.add("revealed"));
+    }
+  </script>
 </Layout>
