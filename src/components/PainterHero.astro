@@ -38,7 +38,7 @@
       <img
         src="/images/roller.png"
         alt=""
-        class="roller-img"
+        class="roller-img -rotate-12 md:-translate-y-8 md:rotate-12 lg:-translate-y-14 lg:rotate-36 xl:-translate-y-16 xl:rotate-48 2xl:-translate-y-18 2xl:rotate-60"
         loading="eager"
         draggable="false"
       />
@@ -414,6 +414,22 @@
 
 <script>
   import { animate } from "motion";
+  import type {
+    AnimationOptions,
+    AnimationPlaybackControlsWithThen,
+    DOMKeyframesDefinition,
+  } from "motion";
+
+  /**
+   * Motion's `animate` has a generic overload `ObjectTarget<O>` that steals
+   * `HTMLElement` (and its `translate` attribute) from the DOM overload.
+   * Pin the element + CSS keyframes signature explicitly.
+   */
+  const animateElement = animate as (
+    element: Element,
+    keyframes: DOMKeyframesDefinition,
+    options?: AnimationOptions,
+  ) => AnimationPlaybackControlsWithThen;
 
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
@@ -433,15 +449,16 @@
       el.style.opacity = "0";
       el.style.transform = "translateY(32px)";
 
-      animate(
-        el,
-        { opacity: [0, 1], transform: ["translateY(32px)", "translateY(0)"] },
-        {
-          duration: 0.85,
-          easing: [0.22, 1, 0.36, 1],
-          delay: 0.3 + i * 0.13,
-        },
-      );
+      const keyframes: DOMKeyframesDefinition = {
+        opacity: [0, 1],
+        transform: ["translateY(32px)", "translateY(0)"],
+      };
+
+      animateElement(el, keyframes, {
+        duration: 0.85,
+        ease: [0.22, 1, 0.36, 1],
+        delay: 0.3 + i * 0.13,
+      });
     });
 
     /* ── Diagonal clip-path wipe ──
