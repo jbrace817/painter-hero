@@ -22,8 +22,7 @@
         muted
         playsinline
         preload="auto"
-        disablepictureinpicture
-      ></video>
+        disablepictureinpicture></video>
       <div class="hero-video-scrim"></div>
     </div>
 
@@ -364,11 +363,21 @@
     animation: hero2-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  [data-hero2-anim]:nth-child(1) { animation-delay: 0.30s; }
-  [data-hero2-anim]:nth-child(2) { animation-delay: 0.43s; }
-  [data-hero2-anim]:nth-child(3) { animation-delay: 0.56s; }
-  [data-hero2-anim]:nth-child(4) { animation-delay: 0.69s; }
-  [data-hero2-anim]:nth-child(5) { animation-delay: 0.82s; }
+  [data-hero2-anim]:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  [data-hero2-anim]:nth-child(2) {
+    animation-delay: 0.43s;
+  }
+  [data-hero2-anim]:nth-child(3) {
+    animation-delay: 0.56s;
+  }
+  [data-hero2-anim]:nth-child(4) {
+    animation-delay: 0.69s;
+  }
+  [data-hero2-anim]:nth-child(5) {
+    animation-delay: 0.82s;
+  }
 
   @keyframes hero2-enter {
     to {
@@ -395,6 +404,18 @@
 </style>
 
 <script>
+  function shouldScrubVideo(): boolean {
+    const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const cannotHover = window.matchMedia("(hover: none)").matches;
+
+    if (!isCoarsePointer && !cannotHover) return true;
+
+    const cores = navigator.hardwareConcurrency || 2;
+    const memory = (navigator as any).deviceMemory || 2;
+
+    return cores >= 6 && memory >= 6;
+  }
+
   function initHero2() {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -416,6 +437,54 @@
       return;
     }
 
+    if (!shouldScrubVideo()) {
+      initPlayMode(hero, video, videoUrl, progressBar, scrollCue);
+      return;
+    }
+
+    initScrubMode(hero, video, videoUrl, progressBar, scrollCue);
+  }
+
+  /* ── Mobile / weak-device path: auto-play on visibility ── */
+
+  function initPlayMode(
+    hero: HTMLElement,
+    video: HTMLVideoElement,
+    videoUrl: string,
+    progressBar: HTMLElement | null,
+    scrollCue: HTMLElement | null,
+  ) {
+    hero.style.height = "100vh";
+
+    if (progressBar?.parentElement) {
+      progressBar.parentElement.style.display = "none";
+    }
+    if (scrollCue) scrollCue.style.display = "none";
+
+    video.src = videoUrl;
+    video.loop = false;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(hero);
+  }
+
+  /* ── Desktop path: scroll-driven video scrubbing ── */
+
+  function initScrubMode(
+    hero: HTMLElement,
+    video: HTMLVideoElement,
+    videoUrl: string,
+    progressBar: HTMLElement | null,
+    scrollCue: HTMLElement | null,
+  ) {
     let videoReady = false;
     let videoDuration = 0;
     let ticking = false;
@@ -424,8 +493,8 @@
     let seeking = false;
 
     function computeProgress() {
-      const rect = hero!.getBoundingClientRect();
-      const runway = hero!.offsetHeight - window.innerHeight;
+      const rect = hero.getBoundingClientRect();
+      const runway = hero.offsetHeight - window.innerHeight;
       if (runway <= 0) return 0;
       const scrolled = Math.max(0, -rect.top);
       return Math.min(1, scrolled / runway);
@@ -436,11 +505,11 @@
         progressBar.style.width = `${(progress * 100).toFixed(1)}%`;
       }
       if (scrollCue) {
-        (scrollCue as HTMLElement).style.opacity = String(
+        scrollCue.style.opacity = String(
           Math.max(0, 1 - progress * 7).toFixed(3),
         );
       }
-      const copyInner = hero!.querySelector(".hero-copy-inner") as HTMLElement;
+      const copyInner = hero.querySelector(".hero-copy-inner") as HTMLElement;
       if (copyInner) {
         const copyFade = Math.max(0, 1 - progress * 2.5);
         copyInner.style.opacity = String(copyFade.toFixed(3));
@@ -487,19 +556,15 @@
       onFrame();
     }
 
-    // Pre-fetch the entire video as a blob so seeking is instant and
-    // doesn't depend on the server supporting byte-range requests
-    // (which can be unreliable on some CDNs / preview runtimes).
-    // Falls back to direct URL loading if fetch fails.
     async function loadVideo() {
       try {
-        const res = await fetch(videoUrl!, { credentials: "same-origin" });
+        const res = await fetch(videoUrl, { credentials: "same-origin" });
         if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
         const blob = await res.blob();
         objectUrl = URL.createObjectURL(blob);
         video.src = objectUrl;
       } catch {
-        video.src = videoUrl!;
+        video.src = videoUrl;
       }
 
       if (video.readyState >= 2) {
