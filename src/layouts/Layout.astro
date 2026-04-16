@@ -1,0 +1,27 @@
+---
+import { SEO, type Props as SEOProps } from "astro-seo";
+import "../styles/globals.css";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+
+interface Props {
+  title: string;
+  seo?: SEOProps;
+}
+
+const { title, seo } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO title={title} {...seo} />
+  </head>
+  <body>
+    <slot />
+    <TailwindIndicator />
+  </body>
+</html>
