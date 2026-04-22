@@ -1,115 +1,221 @@
-<section class="bg-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6">
-    <div class="mb-10 sm:mb-12 md:mb-16" data-reveal>
-      <h2
-        class="font-headline text-primary mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]"
-      >
-        Masterful Services
-      </h2>
-      <div class="bg-primary-container h-1 w-20 sm:w-24"></div>
+<section class="py-16 sm:py-20 md:py-24 lg:py-28" id="services">
+  <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
+    <div class="service-head mb-14">
+      <div data-reveal>
+        <span class="mb-3.5 block font-mono text-xs uppercase tracking-[0.18em] text-teal-600">What we do</span>
+        <h2 class="font-headline text-ink text-[clamp(32px,3.6vw,48px)] leading-[1.08]">Three services. One standard of finish.</h2>
+      </div>
+      <p class="max-w-[62ch] text-[19px] leading-[1.55] text-warm-gray" data-reveal>
+        Every project — no matter the scope — gets the same attention to
+        prep, edges, and cleanup. That's what "meticulous" actually means in
+        practice.
+      </p>
     </div>
 
-    <div
-      class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-10 xl:gap-12"
-    >
-      <!-- Interior — scroll-reveal uses transform; hover lift lives on inner to avoid specificity clash with [data-reveal].revealed -->
-      <div class="h-full min-h-0" data-reveal>
-        <a href="#">
-          <div
-            class="bg-surface-container-lowest group h-full overflow-hidden shadow-sm transition-all duration-200 ease-in hover:-translate-y-1 hover:shadow-lg"
-          >
-            <div class="aspect-[4/3] overflow-hidden">
-              <img
-                alt="Modern minimalist bedroom with smooth charcoal grey accent wall and crisp white trim details"
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XIWQZnOZngyWNNuUKohdH3tLcuQxy0XXXA8t5TJgEluHewVBgG7nhIYRL3KSFgI41I1ftdZtcGND8s_cJRf7etvsb3h7ivNveaTjqdbly3_X8Y9wUvuuqw98EmfxPF1FzVLidD0LC4fhWT1UCo4rASkWW4-2dTER9PLzgHgFboIcDTvmkUjocUyUdu_oJHGiPkCD5DoCiD8J992C0OsO9AgWMLD2aWm-ZPhFT7Jb-GalSDMtb-pIGDpxgxg6FEn-jTVnvAg7DJs"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 sm:p-8">
-              <h3 class="font-headline mb-3 text-xl sm:text-2xl">
-                Interior Painting
-              </h3>
-              <p
-                class="font-body text-on-surface-variant mb-6 text-sm leading-relaxed sm:text-base"
-              >
-                Wall-to-wall precision including trim, crown molding, and
-                ceiling finishes.
-              </p>
-              <span
-                class="border-primary-container text-primary inline-block border-b-2 pb-1 text-xs font-bold tracking-widest uppercase transition-colors sm:text-sm"
-                >Explore Interior</span
-              >
-            </div>
-          </div>
-        </a>
-      </div>
+    <div class="services-grid" data-reveal>
+      <article class="service-card group">
+        <div class="service-img interior-bg">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XIWQZnOZngyWNNuUKohdH3tLcuQxy0XXXA8t5TJgEluHewVBgG7nhIYRL3KSFgI41I1ftdZtcGND8s_cJRf7etvsb3h7ivNveaTjqdbly3_X8Y9wUvuuqw98EmfxPF1FzVLidD0LC4fhWT1UCo4rASkWW4-2dTER9PLzgHgFboIcDTvmkUjocUyUdu_oJHGiPkCD5DoCiD8J992C0OsO9AgWMLD2aWm-ZPhFT7Jb-GalSDMtb-pIGDpxgxg6FEn-jTVnvAg7DJs"
+            alt="Modern bedroom with smooth charcoal accent wall and crisp white trim"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+          <span class="service-tag">Interior</span>
+          <span class="service-num">01</span>
+        </div>
+        <div class="service-body">
+          <h3>Interior Painting</h3>
+          <p>
+            Walls, ceilings, trim, doors, and cabinets — finished with
+            zero-splatter prep and crisp cutting-in.
+          </p>
+          <ul>
+            <li>Drywall repair &amp; skim coat</li>
+            <li>Low-VOC premium paints</li>
+            <li>Cabinet &amp; trim refinishing</li>
+          </ul>
+          <a href="#" class="service-more">
+            Explore interior
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </article>
 
-      <!-- Exterior -->
-      <div class="h-full min-h-0" data-reveal>
-        <a href="#">
-          <div
-            class="bg-surface-container-lowest group h-full overflow-hidden shadow-sm transition-all duration-1000 ease-out hover:-translate-y-1 hover:shadow-lg"
-          >
-            <div class="aspect-[4/3] overflow-hidden">
-              <img
-                alt="Well-maintained historic colonial house in Bucks County with fresh white siding and navy blue shutters"
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPG5J0bPo-gzfFNMicWfQu0CT2fKMGIho0evSipnk399b1HfT4bmN6x6SoCmpLyS-8ZbP_bv5i8q-zELpuaQi6a7BRMKRHY2KktFaJJev2tdZ_iWYdP411kQf2GWTRuBlDRW5yoWC_HY3nie_mcsKkzGynKQfK_9l9uNWOi_pDEZmYeh8y5qY_mcuazP0OVOLGSOhCHlfGXkinpIkoYavIKLH4XOK6SYcI01j604R_Wm0vuqvcxTJ6BrTH3Iu5sl_D3pH2vr2jYA"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 sm:p-8">
-              <h3 class="font-headline mb-3 text-xl sm:text-2xl">
-                Exterior Refinishing
-              </h3>
-              <p
-                class="font-body text-on-surface-variant mb-6 text-sm leading-relaxed sm:text-base"
-              >
-                Weather-resistant protection for siding, shutters, and masonry
-                elements.
-              </p>
-              <span
-                class="border-primary-container text-primary inline-block border-b-2 pb-1 text-xs font-bold tracking-widest uppercase transition-colors sm:text-sm"
-                >Explore Exterior</span
-              >
-            </div>
-          </div>
-        </a>
-      </div>
+      <article class="service-card group">
+        <div class="service-img exterior-bg">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPG5J0bPo-gzfFNMicWfQu0CT2fKMGIho0evSipnk399b1HfT4bmN6x6SoCmpLyS-8ZbP_bv5i8q-zELpuaQi6a7BRMKRHY2KktFaJJev2tdZ_iWYdP411kQf2GWTRuBlDRW5yoWC_HY3nie_mcsKkzGynKQfK_9l9uNWOi_pDEZmYeh8y5qY_mcuazP0OVOLGSOhCHlfGXkinpIkoYavIKLH4XOK6SYcI01j604R_Wm0vuqvcxTJ6BrTH3Iu5sl_D3pH2vr2jYA"
+            alt="Colonial home with fresh white siding and navy shutters"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+          <span class="service-tag">Exterior</span>
+          <span class="service-num">02</span>
+        </div>
+        <div class="service-body">
+          <h3>Exterior Painting</h3>
+          <p>
+            Siding, shutters, doors and porches — weather-sealed work that
+            holds through Bucks County winters.
+          </p>
+          <ul>
+            <li>Power washing &amp; scrape prep</li>
+            <li>Caulk, prime, two top coats</li>
+            <li>5–7 year durability promise</li>
+          </ul>
+          <a href="#" class="service-more">
+            Explore exterior
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </article>
 
-      <!-- Decks -->
-      <div class="h-full min-h-0 sm:col-span-2 md:col-span-1" data-reveal>
-        <a href="#">
-          <div
-            class="bg-surface-container-lowest group h-full overflow-hidden shadow-sm transition-all duration-1000 ease-out hover:-translate-y-1 hover:shadow-lg"
-          >
-            <div class="aspect-[4/3] overflow-hidden">
-              <img
-                alt="Outdoor cedar wood deck with fresh semi-transparent stain showing rich wood grain and water-beading protection"
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1lMb9tsFrHRrTCCT_JNSNTWe_jdpkOB0RfEGMWhrHNdmo3Cok7AL4AEInCcqSmrhH9nLvGMGsqPr74PdoI2SV5gQwfsZRHNUpNeVRQxJ0K0azw06z5V6-5fVmCVvzib-a_ZZFeIZ71p0YLD1Yr9gc51iF2cGQ6Jqiak5bGF9nYTrMOJo4aFTlOyQGAGSVvey2m3IYopYofvxzMu-4PAXgMCGvCnZyGbJ_JBcJiXawvlrW7eewJ3V4_GTk3zJ-NT0g3SR81jGiYE"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 sm:p-8">
-              <h3 class="font-headline mb-3 text-xl sm:text-2xl">
-                Deck &amp; Wood Care
-              </h3>
-              <p
-                class="font-body text-on-surface-variant mb-6 text-sm leading-relaxed sm:text-base"
-              >
-                Comprehensive staining and sealing to preserve your outdoor
-                living spaces.
-              </p>
-              <span
-                class="border-primary-container text-primary inline-block border-b-2 pb-1 text-xs font-bold tracking-widest uppercase transition-colors sm:text-sm"
-                >Explore Decks</span
-              >
-            </div>
-          </div>
-        </a>
-      </div>
+      <article class="service-card group">
+        <div class="service-img decks-bg">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1lMb9tsFrHRrTCCT_JNSNTWe_jdpkOB0RfEGMWhrHNdmo3Cok7AL4AEInCcqSmrhH9nLvGMGsqPr74PdoI2SV5gQwfsZRHNUpNeVRQxJ0K0azw06z5V6-5fVmCVvzib-a_ZZFeIZ71p0YLD1Yr9gc51iF2cGQ6Jqiak5bGF9nYTrMOJo4aFTlOyQGAGSVvey2m3IYopYofvxzMu-4PAXgMCGvCnZyGbJ_JBcJiXawvlrW7eewJ3V4_GTk3zJ-NT0g3SR81jGiYE"
+            alt="Cedar deck with rich semi-transparent stain"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+          <span class="service-tag">Decks &amp; Outbuildings</span>
+          <span class="service-num">03</span>
+        </div>
+        <div class="service-body">
+          <h3>Decks &amp; Outbuildings</h3>
+          <p>
+            Decks, sheds, fences and barns — stained or painted, restored to
+            looking like new.
+          </p>
+          <ul>
+            <li>Sanding &amp; board-by-board prep</li>
+            <li>Solid, semi, or clear stain</li>
+            <li>Sheds, fences, pergolas, barns</li>
+          </ul>
+          <a href="#" class="service-more">
+            Explore decks
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
+
+<style>
+  .service-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--color-cream, #fbf8f1);
+    border: 1px solid rgba(14,42,43,0.08);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -20px rgba(14,42,43,0.35);
+    border-color: transparent;
+  }
+  .service-img {
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-teal-800);
+  }
+  .service-tag {
+    position: absolute;
+    top: 16px; left: 16px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    background: rgba(14,42,43,0.75);
+    color: var(--color-cream);
+    padding: 6px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .service-num {
+    position: absolute;
+    right: 18px; bottom: 18px;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: rgba(251,248,241,0.9);
+    color: var(--color-teal-800);
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    font-family: var(--font-headline);
+    z-index: 2;
+  }
+  .service-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+  .service-body h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+  .service-body p {
+    color: var(--color-warm-gray);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .service-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+    display: grid;
+    gap: 6px;
+  }
+  .service-body ul li {
+    font-size: 13.5px;
+    color: var(--color-ink);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .service-body ul li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--color-teal-500);
+    flex-shrink: 0;
+  }
+  .service-more {
+    margin-top: auto;
+    padding-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-teal-700);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid rgba(14,42,43,0.08);
+  }
+
+  @media (max-width: 1024px) {
+    .service-head { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>

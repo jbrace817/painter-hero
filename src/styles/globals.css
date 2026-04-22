@@ -62,6 +62,18 @@
   --color-inverse-on-surface: #f2f1eb;
   --color-inverse-primary: #e6c180;
 
+  --color-teal-900: #15403f;
+  --color-teal-800: #1f4e4c;
+  --color-teal-700: #2a615e;
+  --color-teal-600: #347874;
+  --color-teal-500: #4fa39d;
+  --color-teal-400: #6bc5bd;
+  --color-teal-300: #a6deda;
+  --color-ink: #0e2a2b;
+  --color-cream: #fbf8f1;
+  --color-cream-2: #f4efe4;
+  --color-warm-gray: #6b6e6b;
+
   --color-foreground: #1b1c19;
   --color-card: #ffffff;
   --color-card-foreground: #1b1c19;
@@ -76,10 +88,11 @@
   --color-input: #d1c5b5;
   --color-ring: #765a23;
 
-  --font-headline: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --font-body: 'Manrope', system-ui, sans-serif;
-  --font-label: 'Manrope', system-ui, sans-serif;
-  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-headline: 'Playfair Display', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-label: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
 }
 
 :root {
