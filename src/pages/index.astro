@@ -49,8 +49,7 @@ import ServicesOverview from "../components/ServicesOverview.astro";
         </div>
         <a href="#portfolio" class="nav-link">Portfolio</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#reviews" class="nav-link">Reviews</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#reviews" class="nav-link lg:hidden xl:inline-flex">Reviews</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -73,18 +72,18 @@ import ServicesOverview from "../components/ServicesOverview.astro";
         </a>
         <a
           href="#contact"
-          class="text-ink inline-flex items-center gap-2.5 rounded-full bg-teal-500 px-5 py-3 text-[15px] font-semibold shadow-[0_6px_18px_-6px_rgba(79,163,157,0.6)] transition-all hover:-translate-y-px hover:bg-teal-400"
+          class="nav-cta text-ink hidden items-center gap-2.5 rounded-full bg-teal-500 px-5 py-3 text-sm font-semibold shadow-[0_6px_18px_-6px_rgba(79,163,157,0.6)] transition-all hover:-translate-y-px hover:bg-teal-400 lg:inline-flex"
         >
           Get Free Estimate
-          <span
-            class="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-90"
-          ></span>
         </a>
         <button
           class="hamburger bg-ink/5 flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
           aria-label="Menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <svg
+            class="hamburger-icon"
             width="20"
             height="20"
             viewBox="0 0 24 24"
@@ -94,10 +93,84 @@ import ServicesOverview from "../components/ServicesOverview.astro";
           >
             <path d="M3 6h18M3 12h18M3 18h18"></path>
           </svg>
+          <svg
+            class="close-icon hidden"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Menu (sibling of header for scroll-state selectors) -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      <a href="#home" class="mobile-menu__link">Home</a>
+      <button
+        class="mobile-menu__link mobile-menu__accordion-btn"
+        aria-expanded="false"
+      >
+        Services
+        <svg
+          class="mobile-menu__chevron"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="mobile-menu__sub" aria-hidden="true">
+        <div class="mobile-menu__sub-inner">
+          <a href="#services" class="mobile-menu__sublink">Interior Painting</a>
+          <a href="#services" class="mobile-menu__sublink">Exterior Painting</a>
+          <a href="#services" class="mobile-menu__sublink"
+            >Decks &amp; Outbuildings</a
+          >
+          <a href="#services" class="mobile-menu__sublink"
+            >Cabinet Refinishing</a
+          >
+        </div>
+      </div>
+      <a href="#portfolio" class="mobile-menu__link">Portfolio</a>
+      <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#reviews" class="mobile-menu__link">Reviews</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a href="tel:+12678103352" class="mobile-menu__phone">
+        <svg
+          class="h-4 w-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+          ></path>
+        </svg>
+        (267) 810-3352
+      </a>
+      <a href="#contact" class="mobile-menu__cta">
+        Get Free Estimate
+        <span
+          class="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-90"
+        ></span>
+      </a>
+    </div>
+  </div>
 
   <main>
     <!-- ═══════ 1. Hero ═══════ -->
@@ -262,21 +335,23 @@ import ServicesOverview from "../components/ServicesOverview.astro";
                   class="font-headline mb-1 block text-[32px] leading-none font-normal text-teal-700"
                   >2005</b
                 ><span class="text-warm-gray text-[12.5px]"
-                  >Founded in Doylestown</span>
+                  >Founded in Doylestown</span
+                >
               </div>
               <div>
                 <b
                   class="font-headline mb-1 block text-[32px] leading-none font-normal text-teal-700"
                   >100%</b
                 ><span class="text-warm-gray text-[12.5px]"
-                  >Owner-led projects</span>
+                  >Owner-led projects</span
+                >
               </div>
               <div>
                 <b
                   class="font-headline mb-1 block text-[32px] leading-none font-normal text-teal-700"
                   >0</b
-                ><span class="text-warm-gray text-[12.5px]"
-                  >Subcontractors</span>
+                ><span class="text-warm-gray text-[12.5px]">Subcontractors</span
+                >
               </div>
             </div>
             <div class="mt-8">
@@ -976,6 +1051,52 @@ import ServicesOverview from "../components/ServicesOverview.astro";
         .forEach((el) => el.classList.add("revealed"));
     }
 
+    /* Mobile menu toggle */
+    const hamburger = document.querySelector(
+      ".hamburger",
+    ) as HTMLButtonElement | null;
+    const mobileMenu = document.getElementById("mobile-menu");
+    const hamburgerIcon = document.querySelector(
+      ".hamburger-icon",
+    ) as SVGElement | null;
+    const closeIcon = document.querySelector(
+      ".close-icon",
+    ) as SVGElement | null;
+    const navHeader = document.getElementById("nav");
+
+    function toggleMobileMenu(open?: boolean) {
+      if (!hamburger || !mobileMenu) return;
+      const isOpen = open ?? !mobileMenu.classList.contains("open");
+      mobileMenu.classList.toggle("open", isOpen);
+      mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+      hamburger.setAttribute("aria-expanded", String(isOpen));
+      hamburgerIcon?.classList.toggle("hidden", isOpen);
+      closeIcon?.classList.toggle("hidden", !isOpen);
+      navHeader?.classList.toggle("menu-open", isOpen);
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+
+    hamburger?.addEventListener("click", () => toggleMobileMenu());
+
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => toggleMobileMenu(false));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) toggleMobileMenu(false);
+    });
+
+    /* Services accordion */
+    const accordionBtn = mobileMenu?.querySelector(
+      ".mobile-menu__accordion-btn",
+    );
+    const accordionSub = mobileMenu?.querySelector(".mobile-menu__sub");
+    accordionBtn?.addEventListener("click", () => {
+      const expanded = accordionBtn.getAttribute("aria-expanded") === "true";
+      accordionBtn.setAttribute("aria-expanded", String(!expanded));
+      accordionSub?.setAttribute("aria-hidden", String(expanded));
+    });
+
     /* Nav: scrim + ink text track #trustBar position (ramp) — no long CSS crossfade “delay” */
     const nav = document.getElementById("nav");
     const trustBar = document.getElementById("trustBar");
@@ -1218,6 +1339,168 @@ import ServicesOverview from "../components/ServicesOverview.astro";
   }
   .submenu a::after {
     display: none !important;
+  }
+
+  /* ═══════ Mobile Menu ═══════ */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 49;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 24px 32px;
+    background: var(--color-cream);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0s 0.3s;
+  }
+  .nav-header:not(.scrolled) ~ .mobile-menu {
+    background: rgba(14, 42, 43, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0s 0s;
+  }
+  .nav-header.menu-open {
+    z-index: 51;
+  }
+  .mobile-menu__nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .mobile-menu__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-ink);
+    /* border-bottom: 1px solid rgba(14, 42, 43, 0.07); */
+    text-decoration: none;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    text-align: left;
+  }
+  .nav-header:not(.scrolled) ~ .mobile-menu .mobile-menu__link {
+    color: var(--color-cream);
+    border-bottom-color: rgba(251, 248, 241, 0.1);
+  }
+  .mobile-menu__accordion-btn {
+    gap: 8px;
+  }
+  .mobile-menu__chevron {
+    transition: transform 0.25s ease;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+  .mobile-menu__accordion-btn[aria-expanded="true"] .mobile-menu__chevron {
+    transform: rotate(180deg);
+  }
+  .mobile-menu__sub {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+    /* border-bottom: 1px solid rgba(14, 42, 43, 0.07); */
+  }
+  .nav-header:not(.scrolled) ~ .mobile-menu .mobile-menu__sub {
+    border-bottom-color: rgba(251, 248, 241, 0.1);
+  }
+  .mobile-menu__sub[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+  }
+  .mobile-menu__sub > :first-child {
+    overflow: hidden;
+  }
+  .mobile-menu__sub-inner {
+    padding: 0 0 8px 16px;
+  }
+  .mobile-menu__sublink {
+    display: block;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-ink);
+    opacity: 0.7;
+    text-decoration: none;
+  }
+  .nav-header:not(.scrolled) ~ .mobile-menu .mobile-menu__sublink {
+    color: var(--color-cream);
+  }
+  .mobile-menu__footer {
+    margin-top: auto;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mobile-menu__phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 12px;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-ink);
+    background: rgba(14, 42, 43, 0.05);
+    text-decoration: none;
+  }
+  .nav-header:not(.scrolled) ~ .mobile-menu .mobile-menu__phone {
+    color: var(--color-cream);
+    background: rgba(251, 248, 241, 0.1);
+  }
+  .mobile-menu__phone svg {
+    color: var(--color-teal-600);
+  }
+  .nav-header:not(.scrolled) ~ .mobile-menu .mobile-menu__phone svg {
+    color: var(--color-teal-300);
+  }
+  .mobile-menu__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-ink);
+    background: var(--color-teal-500);
+    text-decoration: none;
+    box-shadow: 0 6px 18px -6px rgba(79, 163, 157, 0.6);
+    transition: background 0.2s ease;
+  }
+  .mobile-menu__cta:hover {
+    background: var(--color-teal-400);
+  }
+  @media (min-width: 1024px) {
+    .mobile-menu {
+      display: none !important;
+    }
   }
 
   /* ═══════ Trust Bar ═══════ */
