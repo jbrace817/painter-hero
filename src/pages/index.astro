@@ -4,19 +4,39 @@ import PainterHero2 from "../components/PainterHero2.astro";
 import ServicesOverview from "../components/ServicesOverview.astro";
 ---
 
-<Layout title="Bucks County Painters — Meticulous Craftsmanship, Stunning Results">
+<Layout
+  title="Bucks County Painters — Meticulous Craftsmanship, Stunning Results"
+>
   <!-- ═══════ Navigation ═══════ -->
   <header class="nav-header" id="nav">
-    <div class="mx-auto flex max-w-[1280px] items-center justify-between px-5 py-4 sm:px-8">
-      <a href="#" class="flex items-center gap-3 font-headline text-xl no-underline" aria-label="Bucks County Painters">
-        <span class="grid h-10 w-10 place-items-center rounded-full text-[22px] font-medium text-cream shadow-[inset_0_-6px_12px_rgba(0,0,0,0.2),0_2px_6px_rgba(14,42,43,0.2)]" style="background: radial-gradient(circle at 30% 30%, var(--color-teal-400), var(--color-teal-800) 75%)">B</span>
+    <div
+      class="nav-header__bar mx-auto flex max-w-[1280px] items-center justify-between px-5 py-4 sm:px-8"
+    >
+      <a
+        href="#home"
+        class="header-brand font-headline flex items-center gap-3 text-xl no-underline"
+        aria-label="Bucks County Painters"
+      >
+        <span
+          class="text-cream grid h-10 w-10 place-items-center rounded-full text-[22px] font-medium shadow-[inset_0_-6px_12px_rgba(0,0,0,0.2),0_2px_6px_rgba(14,42,43,0.2)]"
+          style="background: radial-gradient(circle at 30% 30%, var(--color-teal-400), var(--color-teal-800) 75%)"
+          >B</span
+        >
         <span>
-          <strong class="font-headline font-normal tracking-[0.01em]">Bucks County Painters</strong>
-          <small class="block font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-warm-gray mt-0.5">Est. Doylestown · PA</small>
+          <strong class="font-headline font-normal tracking-[0.01em]"
+            >Bucks County Painters</strong
+          >
+          <small
+            class="text-warm-gray mt-0.5 block font-mono text-[10px] font-medium tracking-[0.22em] uppercase"
+            >Est. Doylestown · PA</small
+          >
         </span>
       </a>
 
-      <nav class="primary-nav hidden items-center gap-7 lg:flex" aria-label="Primary">
+      <nav
+        class="primary-nav hidden items-center gap-7 lg:flex"
+        aria-label="Primary"
+      >
         <a href="#home" class="nav-link">Home</a>
         <div class="group relative">
           <a href="#services" class="nav-link nav-link-chevron">Services</a>
@@ -34,19 +54,45 @@ import ServicesOverview from "../components/ServicesOverview.astro";
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="tel:+12678103352" class="phone-link hidden items-center gap-2 rounded-full px-3 py-2 font-mono text-[13px] transition-colors hover:bg-ink/5 md:inline-flex">
-          <svg class="h-3.5 w-3.5 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+        <a
+          href="tel:+12678103352"
+          class="phone-link hover:bg-ink/5 hidden items-center gap-2 rounded-full px-3 py-2 font-mono text-[13px] transition-colors md:inline-flex"
+        >
+          <svg
+            class="h-3.5 w-3.5 text-teal-600"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+            ></path>
           </svg>
           (267) 810-3352
         </a>
-        <a href="#contact" class="inline-flex items-center gap-2.5 rounded-full bg-teal-500 px-5 py-3 text-[15px] font-semibold text-ink shadow-[0_6px_18px_-6px_rgba(79,163,157,0.6)] transition-all hover:-translate-y-px hover:bg-teal-400">
+        <a
+          href="#contact"
+          class="text-ink inline-flex items-center gap-2.5 rounded-full bg-teal-500 px-5 py-3 text-[15px] font-semibold shadow-[0_6px_18px_-6px_rgba(79,163,157,0.6)] transition-all hover:-translate-y-px hover:bg-teal-400"
+        >
           Get Free Estimate
-          <span class="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-90"></span>
+          <span
+            class="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-90"
+          ></span>
         </a>
-        <button class="hamburger flex h-10 w-10 items-center justify-center rounded-lg bg-ink/5 lg:hidden" aria-label="Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 6h18M3 12h18M3 18h18" />
+        <button
+          class="hamburger bg-ink/5 flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
+          aria-label="Menu"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
           </svg>
         </button>
       </div>
@@ -58,51 +104,94 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     <PainterHero2 />
 
     <!-- ═══════ 2. Trust Bar ═══════ -->
-    <section class="bg-teal-900 py-7 text-cream" id="trustBar">
+    <section class="text-cream bg-teal-900 py-7" id="trustBar">
       <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div class="trust-bar-grid" data-reveal>
           <div class="trust-cell">
             <div class="trust-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="h-[22px] w-[22px]">
-                <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1z" />
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-[22px] w-[22px]"
+              >
+                <path
+                  d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1z"
+                ></path>
               </svg>
             </div>
             <div>
-              <strong class="block text-[15px] font-semibold">5-star Google reviews</strong>
-              <span class="text-[13px] text-cream/70">Over 40 verified neighbors</span>
+              <strong class="block text-[15px] font-semibold"
+                >5-star Google reviews</strong
+              >
+              <span class="text-cream/70 text-[13px]"
+                >Over 40 verified neighbors</span
+              >
             </div>
           </div>
           <div class="trust-cell">
             <div class="trust-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-[22px] w-[22px]">
-                <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="h-[22px] w-[22px]"
+              >
+                <circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"
+                ></path>
               </svg>
             </div>
             <div>
-              <strong class="block text-[15px] font-semibold">20+ years of craft</strong>
-              <span class="text-[13px] text-cream/70">Since the early 2000s</span>
+              <strong class="block text-[15px] font-semibold"
+                >20+ years of craft</strong
+              >
+              <span class="text-cream/70 text-[13px]"
+                >Since the early 2000s</span
+              >
             </div>
           </div>
           <div class="trust-cell">
             <div class="trust-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-[22px] w-[22px]">
-                <path d="M3 10l9-7 9 7v10a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><path d="M9 22V12h6v10" />
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="h-[22px] w-[22px]"
+              >
+                <path d="M3 10l9-7 9 7v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                ></path><path d="M9 22V12h6v10"></path>
               </svg>
             </div>
             <div>
-              <strong class="block text-[15px] font-semibold">Locally owned</strong>
-              <span class="text-[13px] text-cream/70">Based in Doylestown, PA</span>
+              <strong class="block text-[15px] font-semibold"
+                >Locally owned</strong
+              >
+              <span class="text-cream/70 text-[13px]"
+                >Based in Doylestown, PA</span
+              >
             </div>
           </div>
           <div class="trust-cell">
             <div class="trust-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-[22px] w-[22px]">
-                <path d="M4 19V7l8-4 8 4v12" /><path d="M4 11h16" /><path d="M9 19v-7h6v7" />
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="h-[22px] w-[22px]"
+              >
+                <path d="M4 19V7l8-4 8 4v12"></path><path d="M4 11h16"
+                ></path><path d="M9 19v-7h6v7"></path>
               </svg>
             </div>
             <div>
-              <strong class="block text-[15px] font-semibold">Premium paints only</strong>
-              <span class="text-[13px] text-cream/70">Sherwin-Williams &amp; Benjamin Moore</span>
+              <strong class="block text-[15px] font-semibold"
+                >Premium paints only</strong
+              >
+              <span class="text-cream/70 text-[13px]"
+                >Sherwin-Williams &amp; Benjamin Moore</span
+              >
             </div>
           </div>
         </div>
@@ -116,7 +205,11 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     <section class="bg-cream-2 py-16 sm:py-20 md:py-24 lg:py-28" id="about">
       <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div class="about-grid">
-          <div class="about-photo" data-reveal aria-label="Portrait of Ben de Lannee">
+          <div
+            class="about-photo"
+            data-reveal
+            aria-label="Portrait of Ben de Lannee"
+          >
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WVoQkQGf9Gt_naZg94gtjLkB8lgm3HqhnkmQSz36FhvdYNEuLNGPuqhHtJKezbP0PfMUWiVo3cnSoInUni88LK_8ObxLqZihzj7eqJgoZHBe1W0oGrJ7rzTjKiMFbFxL-VUyQJX6liQdECBUDgdoFog_OEl5rb7rSfyEeU61BmxA3YvXGgFWDaknwy8SsFPnbxk-mVMbQit9enhTqFuFiwBFRJEJOxIKAYflK3CRra7etcGHs-fV-OcnZT25PT1bkgyz1b28BTQ"
               alt="Ben de Lannee, owner of Bucks County Painters"
@@ -124,38 +217,83 @@ import ServicesOverview from "../components/ServicesOverview.astro";
               loading="lazy"
             />
             <div class="absolute top-5 right-5 flex flex-col gap-2.5">
-              <div class="rounded-xl bg-cream/95 px-3.5 py-2.5 font-mono text-[11px] text-teal-800">
-                <b class="mb-0.5 block font-headline text-[22px] leading-none font-normal text-ink">20+</b>Years painting
+              <div
+                class="bg-cream/95 rounded-xl px-3.5 py-2.5 font-mono text-[11px] text-teal-800"
+              >
+                <b
+                  class="font-headline text-ink mb-0.5 block text-[22px] leading-none font-normal"
+                  >20+</b
+                >Years painting
               </div>
-              <div class="rounded-xl bg-cream/95 px-3.5 py-2.5 font-mono text-[11px] text-teal-800">
-                <b class="mb-0.5 block font-headline text-[22px] leading-none font-normal text-ink">600+</b>Homes finished
+              <div
+                class="bg-cream/95 rounded-xl px-3.5 py-2.5 font-mono text-[11px] text-teal-800"
+              >
+                <b
+                  class="font-headline text-ink mb-0.5 block text-[22px] leading-none font-normal"
+                  >600+</b
+                >Homes finished
               </div>
             </div>
           </div>
 
           <div class="about-copy" data-reveal>
-            <span class="mb-3.5 block font-mono text-xs uppercase tracking-[0.18em] text-teal-600">About the owner</span>
-            <h2 class="font-headline text-ink mb-5 text-[clamp(32px,3.6vw,48px)] leading-[1.08]">
+            <span
+              class="mb-3.5 block font-mono text-xs tracking-[0.18em] text-teal-600 uppercase"
+              >About the owner</span
+            >
+            <h2
+              class="font-headline text-ink mb-5 text-[clamp(32px,3.6vw,48px)] leading-[1.08]"
+            >
               Ben grew up painting houses in Doylestown. He still does.
             </h2>
-            <p class="max-w-[62ch] text-[19px] leading-[1.55] text-warm-gray">
+            <p class="text-warm-gray max-w-[62ch] text-[19px] leading-[1.55]">
               What started as a summer job during high school became a calling.
               Twenty years later, Ben de Lannee runs every job personally — from
               the first walk-through to the last drop-cloth fold. No
               subcontractors, no shortcuts, no surprises on the invoice.
             </p>
-            <p class="mt-6 font-headline text-[26px] italic text-teal-700">
-              — "If it's not a finish I'd put in my own home, it's not going in yours."
+            <p class="font-headline mt-6 text-[26px] text-teal-700 italic">
+              — "If it's not a finish I'd put in my own home, it's not going in
+              yours."
             </p>
             <div class="about-meta-grid">
-              <div><b class="mb-1 block font-headline text-[32px] leading-none font-normal text-teal-700">2005</b><span class="text-[12.5px] text-warm-gray">Founded in Doylestown</span></div>
-              <div><b class="mb-1 block font-headline text-[32px] leading-none font-normal text-teal-700">100%</b><span class="text-[12.5px] text-warm-gray">Owner-led projects</span></div>
-              <div><b class="mb-1 block font-headline text-[32px] leading-none font-normal text-teal-700">0</b><span class="text-[12.5px] text-warm-gray">Subcontractors</span></div>
+              <div>
+                <b
+                  class="font-headline mb-1 block text-[32px] leading-none font-normal text-teal-700"
+                  >2005</b
+                ><span class="text-warm-gray text-[12.5px]"
+                  >Founded in Doylestown</span>
+              </div>
+              <div>
+                <b
+                  class="font-headline mb-1 block text-[32px] leading-none font-normal text-teal-700"
+                  >100%</b
+                ><span class="text-warm-gray text-[12.5px]"
+                  >Owner-led projects</span>
+              </div>
+              <div>
+                <b
+                  class="font-headline mb-1 block text-[32px] leading-none font-normal text-teal-700"
+                  >0</b
+                ><span class="text-warm-gray text-[12.5px]"
+                  >Subcontractors</span>
+              </div>
             </div>
             <div class="mt-8">
-              <a href="#" class="inline-flex items-center gap-2.5 rounded-full border border-ink/18 px-[22px] py-3.5 text-[15px] font-semibold text-ink transition-all hover:-translate-y-px hover:border-ink">
+              <a
+                href="#"
+                class="border-ink/18 text-ink hover:border-ink inline-flex items-center gap-2.5 rounded-full border px-[22px] py-3.5 text-[15px] font-semibold transition-all hover:-translate-y-px"
+              >
                 Meet the full story
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  ><path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                >
               </a>
             </div>
           </div>
@@ -166,153 +304,312 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     <!-- ═══════ 5. Portfolio ═══════ -->
     <section class="py-16 sm:py-20 md:py-24 lg:py-28" id="portfolio">
       <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
-        <div class="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div
+          class="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+        >
           <div data-reveal>
-            <span class="mb-3.5 block font-mono text-xs uppercase tracking-[0.18em] text-teal-600">Recent work</span>
-            <h2 class="font-headline text-ink text-[clamp(32px,3.6vw,48px)] leading-[1.08]">A few projects from this year.</h2>
+            <span
+              class="mb-3.5 block font-mono text-xs tracking-[0.18em] text-teal-600 uppercase"
+              >Recent work</span
+            >
+            <h2
+              class="font-headline text-ink text-[clamp(32px,3.6vw,48px)] leading-[1.08]"
+            >
+              A few projects from this year.
+            </h2>
           </div>
-          <a href="#" class="inline-flex items-center gap-2.5 rounded-full border border-ink/18 px-[22px] py-3.5 text-sm font-semibold text-ink transition-all hover:-translate-y-px hover:border-ink" data-reveal>
+          <a
+            href="#"
+            class="border-ink/18 text-ink hover:border-ink inline-flex items-center gap-2.5 rounded-full border px-[22px] py-3.5 text-sm font-semibold transition-all hover:-translate-y-px"
+            data-reveal
+          >
             View full gallery
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"></path></svg
+            >
           </a>
         </div>
 
         <div class="portfolio-grid" data-reveal>
-          <div class="portfolio-item col-span-2 row-span-2 group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-YEBQH7bswO-5atb1gQjJ_gPOzEVRkv1q995Qh2qK6CWCez7yZ5Pg1HDkpMw0l6xNiPs1TnPX7wHFQa5rDZ5AabSKa5vbMeQ6xoSS8iffdK9EuRXlbjk_o3cBa3Lh3mXH6s84aSAW0vLZCK1sr6fzL7v2TK0L5uctZwlBK1mCpYEmy4ZZPJ0pvriZ1Y1zNfU1FeLL9JNMph7U-7KqlxKlXz_ilzz1KsQcZ0j59kWiIMHbvSWJyoi4xSlZzu4uFlwZkqbj72AM7E" alt="Colonial living room" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>Colonial living room</b><span>Doylestown · Interior</span></div>
+          <div class="portfolio-item group col-span-2 row-span-2">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-YEBQH7bswO-5atb1gQjJ_gPOzEVRkv1q995Qh2qK6CWCez7yZ5Pg1HDkpMw0l6xNiPs1TnPX7wHFQa5rDZ5AabSKa5vbMeQ6xoSS8iffdK9EuRXlbjk_o3cBa3Lh3mXH6s84aSAW0vLZCK1sr6fzL7v2TK0L5uctZwlBK1mCpYEmy4ZZPJ0pvriZ1Y1zNfU1FeLL9JNMph7U-7KqlxKlXz_ilzz1KsQcZ0j59kWiIMHbvSWJyoi4xSlZzu4uFlwZkqbj72AM7E"
+              alt="Colonial living room"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>Colonial living room</b><span>Doylestown · Interior</span>
+            </div>
           </div>
-          <div class="portfolio-item row-span-2 group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJmnzHsEBONJp8EoxoUYkY8aNU96y8uqFIhTEwj5j4nmdshMU27SJDhbt0FaowcrFjfXqo8z_YHSeN3pOtDNmoc3Htma2wrhadE4Etgeodps3Z5Or8wHEnz2IlegPKHFSA5v7zjui7S-nntkebb_oqlGlHePgJDOLnYusr06MVbpm5DXi5_vf8UerT4lCjosrzdakBRHY2YivRCg1_SVJTH-yd_u41zwvVS1J4sm88fRrk2g1Cyd75pzhmeIThZ1pWwGkD-jHbdi0" alt="Cape Cod exterior" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>Cape Cod exterior</b><span>New Hope · Exterior</span></div>
-          </div>
-          <div class="portfolio-item group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArroNn32xYtx-vxPMLq_M0qSyort1QmVSIJLQDPcnk10GAaxXODlGVVowo_QJbywYd0gC1y3EKdFqqlvX89hAdCQuVg9FIt9e7Bejf4SexP2xMJqJKiza2Elhx21xU72wM9L2bO57MNZDS5NS6djCD260wsei2AUTamuocGDmTrXdjKHeePXtNEDfP-2_qEdr8GkzpWB6zVyS7n42hvjb0auPUvWE8rUeDcVs5O6HO5xjK7rAyA8sbAETgc0pDVDXTH0TIW6YbeQA" alt="Cedar deck refinish" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>Cedar deck refinish</b><span>Warrington · Deck</span></div>
-          </div>
-          <div class="portfolio-item group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKcQgLnJNh7IwGUxNM7wO6JBwHtgWfbTTjtcinWUzT7FqXhDj5jG7mSx9g1CSIrdH85BfV4GL2qgmwBnnv4aOQakOJN6IY1ASnY643j40CSg9YNwDBnXygU7qhaQOrTAmg-89OE63T964GlH9RmzJraYY1gwsQt8K9jfRW4LSkQUFICAeGgFAcRbA5CTYDXcVoiNa7HnPeiVXFlA4wJa5fmxIkwR3Lz0K6cz1IpX45RPaAr2xi6fGUKQeXygMo_pe0m_tpfuv09xo" alt="White oak cabinets" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>White oak cabinets</b><span>Solebury · Cabinetry</span></div>
-          </div>
-          <div class="portfolio-item col-span-2 group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC88vmPscUHBdiyVHOFybAjsDMc2cHQb6SDXK7vncVHdGAmaJTOWMcQcscZrkoRsl7R35A4BlqhLK4F2v2s0srgPLjyU-X9IAn6qPJx7ypfcPEjm7TrZBraFbSLvwU8XLrmVVaV85FVZys6ooc7LCUujJ07IOw5nFRXTFuK-43brBu36MTZBQSNkorkYk823Xva1_l7SNWpIa6My_YhjVHEOmyXW4gZWlElXq8xYsVCBKQIt9Mjes-PzWgW4odQfYf2XWVXINvPmdE" alt="Kitchen with navy cabinets" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>Kitchen refresh</b><span>Buckingham · Interior</span></div>
-          </div>
-          <div class="portfolio-item group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPG5J0bPo-gzfFNMicWfQu0CT2fKMGIho0evSipnk399b1HfT4bmN6x6SoCmpLyS-8ZbP_bv5i8q-zELpuaQi6a7BRMKRHY2KktFaJJev2tdZ_iWYdP411kQf2GWTRuBlDRW5yoWC_HY3nie_mcsKkzGynKQfK_9l9uNWOi_pDEZmYeh8y5qY_mcuazP0OVOLGSOhCHlfGXkinpIkoYavIKLH4XOK6SYcI01j604R_Wm0vuqvcxTJ6BrTH3Iu5sl_D3pH2vr2jYA" alt="Farmhouse siding" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>Farmhouse siding</b><span>Plumstead · Exterior</span></div>
+          <div class="portfolio-item group row-span-2">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJmnzHsEBONJp8EoxoUYkY8aNU96y8uqFIhTEwj5j4nmdshMU27SJDhbt0FaowcrFjfXqo8z_YHSeN3pOtDNmoc3Htma2wrhadE4Etgeodps3Z5Or8wHEnz2IlegPKHFSA5v7zjui7S-nntkebb_oqlGlHePgJDOLnYusr06MVbpm5DXi5_vf8UerT4lCjosrzdakBRHY2YivRCg1_SVJTH-yd_u41zwvVS1J4sm88fRrk2g1Cyd75pzhmeIThZ1pWwGkD-jHbdi0"
+              alt="Cape Cod exterior"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>Cape Cod exterior</b><span>New Hope · Exterior</span>
+            </div>
           </div>
           <div class="portfolio-item group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XIWQZnOZngyWNNuUKohdH3tLcuQxy0XXXA8t5TJgEluHewVBgG7nhIYRL3KSFgI41I1ftdZtcGND8s_cJRf7etvsb3h7ivNveaTjqdbly3_X8Y9wUvuuqw98EmfxPF1FzVLidD0LC4fhWT1UCo4rASkWW4-2dTER9PLzgHgFboIcDTvmkUjocUyUdu_oJHGiPkCD5DoCiD8J992C0OsO9AgWMLD2aWm-ZPhFT7Jb-GalSDMtb-pIGDpxgxg6FEn-jTVnvAg7DJs" alt="Primary bedroom" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>Primary bedroom</b><span>Doylestown · Interior</span></div>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuArroNn32xYtx-vxPMLq_M0qSyort1QmVSIJLQDPcnk10GAaxXODlGVVowo_QJbywYd0gC1y3EKdFqqlvX89hAdCQuVg9FIt9e7Bejf4SexP2xMJqJKiza2Elhx21xU72wM9L2bO57MNZDS5NS6djCD260wsei2AUTamuocGDmTrXdjKHeePXtNEDfP-2_qEdr8GkzpWB6zVyS7n42hvjb0auPUvWE8rUeDcVs5O6HO5xjK7rAyA8sbAETgc0pDVDXTH0TIW6YbeQA"
+              alt="Cedar deck refinish"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>Cedar deck refinish</b><span>Warrington · Deck</span>
+            </div>
           </div>
           <div class="portfolio-item group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1lMb9tsFrHRrTCCT_JNSNTWe_jdpkOB0RfEGMWhrHNdmo3Cok7AL4AEInCcqSmrhH9nLvGMGsqPr74PdoI2SV5gQwfsZRHNUpNeVRQxJ0K0azw06z5V6-5fVmCVvzib-a_ZZFeIZ71p0YLD1Yr9gc51iF2cGQ6Jqiak5bGF9nYTrMOJo4aFTlOyQGAGSVvey2m3IYopYofvxzMu-4PAXgMCGvCnZyGbJ_JBcJiXawvlrW7eewJ3V4_GTk3zJ-NT0g3SR81jGiYE" alt="Pergola &amp; fence" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-            <div class="portfolio-overlay"><b>Pergola &amp; fence</b><span>Chalfont · Deck</span></div>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKcQgLnJNh7IwGUxNM7wO6JBwHtgWfbTTjtcinWUzT7FqXhDj5jG7mSx9g1CSIrdH85BfV4GL2qgmwBnnv4aOQakOJN6IY1ASnY643j40CSg9YNwDBnXygU7qhaQOrTAmg-89OE63T964GlH9RmzJraYY1gwsQt8K9jfRW4LSkQUFICAeGgFAcRbA5CTYDXcVoiNa7HnPeiVXFlA4wJa5fmxIkwR3Lz0K6cz1IpX45RPaAr2xi6fGUKQeXygMo_pe0m_tpfuv09xo"
+              alt="White oak cabinets"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>White oak cabinets</b><span>Solebury · Cabinetry</span>
+            </div>
+          </div>
+          <div class="portfolio-item group col-span-2">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC88vmPscUHBdiyVHOFybAjsDMc2cHQb6SDXK7vncVHdGAmaJTOWMcQcscZrkoRsl7R35A4BlqhLK4F2v2s0srgPLjyU-X9IAn6qPJx7ypfcPEjm7TrZBraFbSLvwU8XLrmVVaV85FVZys6ooc7LCUujJ07IOw5nFRXTFuK-43brBu36MTZBQSNkorkYk823Xva1_l7SNWpIa6My_YhjVHEOmyXW4gZWlElXq8xYsVCBKQIt9Mjes-PzWgW4odQfYf2XWVXINvPmdE"
+              alt="Kitchen with navy cabinets"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>Kitchen refresh</b><span>Buckingham · Interior</span>
+            </div>
+          </div>
+          <div class="portfolio-item group">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPG5J0bPo-gzfFNMicWfQu0CT2fKMGIho0evSipnk399b1HfT4bmN6x6SoCmpLyS-8ZbP_bv5i8q-zELpuaQi6a7BRMKRHY2KktFaJJev2tdZ_iWYdP411kQf2GWTRuBlDRW5yoWC_HY3nie_mcsKkzGynKQfK_9l9uNWOi_pDEZmYeh8y5qY_mcuazP0OVOLGSOhCHlfGXkinpIkoYavIKLH4XOK6SYcI01j604R_Wm0vuqvcxTJ6BrTH3Iu5sl_D3pH2vr2jYA"
+              alt="Farmhouse siding"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>Farmhouse siding</b><span>Plumstead · Exterior</span>
+            </div>
+          </div>
+          <div class="portfolio-item group">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XIWQZnOZngyWNNuUKohdH3tLcuQxy0XXXA8t5TJgEluHewVBgG7nhIYRL3KSFgI41I1ftdZtcGND8s_cJRf7etvsb3h7ivNveaTjqdbly3_X8Y9wUvuuqw98EmfxPF1FzVLidD0LC4fhWT1UCo4rASkWW4-2dTER9PLzgHgFboIcDTvmkUjocUyUdu_oJHGiPkCD5DoCiD8J992C0OsO9AgWMLD2aWm-ZPhFT7Jb-GalSDMtb-pIGDpxgxg6FEn-jTVnvAg7DJs"
+              alt="Primary bedroom"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>Primary bedroom</b><span>Doylestown · Interior</span>
+            </div>
+          </div>
+          <div class="portfolio-item group">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1lMb9tsFrHRrTCCT_JNSNTWe_jdpkOB0RfEGMWhrHNdmo3Cok7AL4AEInCcqSmrhH9nLvGMGsqPr74PdoI2SV5gQwfsZRHNUpNeVRQxJ0K0azw06z5V6-5fVmCVvzib-a_ZZFeIZ71p0YLD1Yr9gc51iF2cGQ6Jqiak5bGF9nYTrMOJo4aFTlOyQGAGSVvey2m3IYopYofvxzMu-4PAXgMCGvCnZyGbJ_JBcJiXawvlrW7eewJ3V4_GTk3zJ-NT0g3SR81jGiYE"
+              alt="Pergola & fence"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <b>Pergola &amp; fence</b><span>Chalfont · Deck</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════ 6. Testimonials ═══════ -->
-    <section class="testimonials-section bg-teal-900 py-16 text-cream sm:py-20 md:py-24 lg:py-28" id="reviews">
-      <div class="mx-auto max-w-[1280px] px-5 sm:px-8 relative z-1">
-        <div class="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <section
+      class="testimonials-section text-cream bg-teal-900 py-16 sm:py-20 md:py-24 lg:py-28"
+      id="reviews"
+    >
+      <div class="relative z-1 mx-auto max-w-[1280px] px-5 sm:px-8">
+        <div
+          class="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+        >
           <div data-reveal>
-            <span class="mb-3.5 block font-mono text-xs uppercase tracking-[0.18em] text-teal-300">What neighbors say</span>
-            <h2 class="font-headline text-cream text-[clamp(32px,3.6vw,48px)] leading-[1.08]">Reviews that read like love letters.</h2>
+            <span
+              class="mb-3.5 block font-mono text-xs tracking-[0.18em] text-teal-300 uppercase"
+              >What neighbors say</span
+            >
+            <h2
+              class="font-headline text-cream text-[clamp(32px,3.6vw,48px)] leading-[1.08]"
+            >
+              Reviews that read like love letters.
+            </h2>
           </div>
-          <p class="max-w-[62ch] text-[19px] leading-[1.55] text-cream/78" data-reveal>
+          <p
+            class="text-cream/78 max-w-[62ch] text-[19px] leading-[1.55]"
+            data-reveal
+          >
             Don't take our word for it. Here's what homeowners across Bucks
             County have actually written about working with Ben.
           </p>
         </div>
 
-        <div class="font-headline text-[180px] leading-[0.8] text-teal-500 opacity-25 -mb-10">&ldquo;</div>
+        <div
+          class="font-headline -mb-10 text-[180px] leading-[0.8] text-teal-500 opacity-25"
+        >
+          &ldquo;
+        </div>
 
         <div class="testimonial-track" id="tTrack">
           <div class="testimonial-slide active">
-            <blockquote class="font-headline text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal text-cream max-w-[48ch] mb-8">
+            <blockquote
+              class="font-headline text-cream mb-8 max-w-[48ch] text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal"
+            >
               Ben is a perfectionist in the best possible way. We've had four
               painters over the years; no one else came close to the prep work
               and the finish. Six out of five stars.
             </blockquote>
             <div class="flex items-center gap-4">
-              <div class="grid h-12 w-12 place-items-center rounded-full font-headline text-xl text-cream" style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))">M</div>
+              <div
+                class="font-headline text-cream grid h-12 w-12 place-items-center rounded-full text-xl"
+                style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))"
+              >
+                M
+              </div>
               <div>
                 <div class="font-semibold">Megan R.</div>
-                <div class="font-mono text-[13px] text-cream/60">Doylestown · March 2026</div>
+                <div class="text-cream/60 font-mono text-[13px]">
+                  Doylestown · March 2026
+                </div>
               </div>
             </div>
           </div>
           <div class="testimonial-slide">
-            <blockquote class="font-headline text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal text-cream max-w-[48ch] mb-8">
+            <blockquote
+              class="font-headline text-cream mb-8 max-w-[48ch] text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal"
+            >
               Quiet, careful, and meticulously clean. Ben repainted the entire
               first floor while we were at work each day — we came home to crisp
               trim and not a speck on the floor. Unbelievable.
             </blockquote>
             <div class="flex items-center gap-4">
-              <div class="grid h-12 w-12 place-items-center rounded-full font-headline text-xl text-cream" style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))">T</div>
+              <div
+                class="font-headline text-cream grid h-12 w-12 place-items-center rounded-full text-xl"
+                style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))"
+              >
+                T
+              </div>
               <div>
                 <div class="font-semibold">Tom &amp; Lisa F.</div>
-                <div class="font-mono text-[13px] text-cream/60">New Hope · January 2026</div>
+                <div class="text-cream/60 font-mono text-[13px]">
+                  New Hope · January 2026
+                </div>
               </div>
             </div>
           </div>
           <div class="testimonial-slide">
-            <blockquote class="font-headline text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal text-cream max-w-[48ch] mb-8">
+            <blockquote
+              class="font-headline text-cream mb-8 max-w-[48ch] text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal"
+            >
               The deck looks better than the day it was built. He sanded every
               board by hand, sealed it properly, and checked in twice the next
               week to make sure we were happy. A different kind of contractor.
             </blockquote>
             <div class="flex items-center gap-4">
-              <div class="grid h-12 w-12 place-items-center rounded-full font-headline text-xl text-cream" style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))">D</div>
+              <div
+                class="font-headline text-cream grid h-12 w-12 place-items-center rounded-full text-xl"
+                style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))"
+              >
+                D
+              </div>
               <div>
                 <div class="font-semibold">Dr. Amara O.</div>
-                <div class="font-mono text-[13px] text-cream/60">Solebury · October 2025</div>
+                <div class="text-cream/60 font-mono text-[13px]">
+                  Solebury · October 2025
+                </div>
               </div>
             </div>
           </div>
           <div class="testimonial-slide">
-            <blockquote class="font-headline text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal text-cream max-w-[48ch] mb-8">
+            <blockquote
+              class="font-headline text-cream mb-8 max-w-[48ch] text-[clamp(24px,2.6vw,34px)] leading-[1.35] font-normal"
+            >
               We got three quotes. Ben's wasn't the cheapest — but he walked the
               whole house with me, pointed out things other painters missed, and
               delivered exactly what he promised. Already hiring him again.
             </blockquote>
             <div class="flex items-center gap-4">
-              <div class="grid h-12 w-12 place-items-center rounded-full font-headline text-xl text-cream" style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))">J</div>
+              <div
+                class="font-headline text-cream grid h-12 w-12 place-items-center rounded-full text-xl"
+                style="background: linear-gradient(135deg, var(--color-teal-400), var(--color-teal-700))"
+              >
+                J
+              </div>
               <div>
                 <div class="font-semibold">James P.</div>
-                <div class="font-mono text-[13px] text-cream/60">Buckingham · August 2025</div>
+                <div class="text-cream/60 font-mono text-[13px]">
+                  Buckingham · August 2025
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-12 flex items-center justify-between border-t border-cream/12 pt-8">
+        <div
+          class="border-cream/12 mt-12 flex items-center justify-between border-t pt-8"
+        >
           <div class="flex gap-2.5" id="tDots"></div>
           <div class="flex gap-2.5">
             <button class="arrow-btn" id="tPrev" aria-label="Previous">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-[18px] w-[18px]"><path d="M15 18l-6-6 6-6" /></svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="h-[18px] w-[18px]"><path d="M15 18l-6-6 6-6"></path></svg
+              >
             </button>
             <button class="arrow-btn" id="tNext" aria-label="Next">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-[18px] w-[18px]"><path d="M9 6l6 6-6 6" /></svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="h-[18px] w-[18px]"><path d="M9 6l6 6-6 6"></path></svg
+              >
             </button>
           </div>
         </div>
 
-        <div class="mt-[72px] grid grid-cols-1 gap-8 sm:grid-cols-3" data-reveal>
+        <div
+          class="mt-[72px] grid grid-cols-1 gap-8 sm:grid-cols-3"
+          data-reveal
+        >
           <div>
-            <b class="mb-1.5 block font-headline text-5xl font-normal text-teal-400" data-count="5.0" data-decimals="1">0.0</b>
-            <span class="text-sm text-cream/70">Average Google rating</span>
+            <b
+              class="font-headline mb-1.5 block text-5xl font-normal text-teal-400"
+              data-count="5.0"
+              data-decimals="1">0.0</b
+            >
+            <span class="text-cream/70 text-sm">Average Google rating</span>
           </div>
           <div>
-            <b class="mb-1.5 block font-headline text-5xl font-normal text-teal-400" data-count="42">0</b>
-            <span class="text-sm text-cream/70">Five-star reviews</span>
+            <b
+              class="font-headline mb-1.5 block text-5xl font-normal text-teal-400"
+              data-count="42">0</b
+            >
+            <span class="text-cream/70 text-sm">Five-star reviews</span>
           </div>
           <div>
-            <b class="mb-1.5 block font-headline text-5xl font-normal text-teal-400" data-count="100" data-suffix="%">0%</b>
-            <span class="text-sm text-cream/70">Would recommend</span>
+            <b
+              class="font-headline mb-1.5 block text-5xl font-normal text-teal-400"
+              data-count="100"
+              data-suffix="%">0%</b
+            >
+            <span class="text-cream/70 text-sm">Would recommend</span>
           </div>
         </div>
       </div>
@@ -321,12 +618,24 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     <!-- ═══════ 7. Process ═══════ -->
     <section class="py-16 sm:py-20 md:py-24 lg:py-28" id="process">
       <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
-        <div class="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div
+          class="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+        >
           <div data-reveal>
-            <span class="mb-3.5 block font-mono text-xs uppercase tracking-[0.18em] text-teal-600">How it works</span>
-            <h2 class="font-headline text-ink text-[clamp(32px,3.6vw,48px)] leading-[1.08]">Four steps. No surprises.</h2>
+            <span
+              class="mb-3.5 block font-mono text-xs tracking-[0.18em] text-teal-600 uppercase"
+              >How it works</span
+            >
+            <h2
+              class="font-headline text-ink text-[clamp(32px,3.6vw,48px)] leading-[1.08]"
+            >
+              Four steps. No surprises.
+            </h2>
           </div>
-          <p class="max-w-[62ch] text-[19px] leading-[1.55] text-warm-gray" data-reveal>
+          <p
+            class="text-warm-gray max-w-[62ch] text-[19px] leading-[1.55]"
+            data-reveal
+          >
             From the first walk-through to the final wipe-down, you'll know
             exactly what's happening and when.
           </p>
@@ -335,16 +644,20 @@ import ServicesOverview from "../components/ServicesOverview.astro";
         <div class="process-grid" data-reveal>
           <div class="process-step">
             <div class="process-num">01<small>Walk-through</small></div>
-            <h3 class="mb-2.5 text-[22px] font-semibold leading-[1.3]">Visit your home</h3>
-            <p class="text-[14.5px] leading-[1.55] text-warm-gray">
+            <h3 class="mb-2.5 text-[22px] leading-[1.3] font-semibold">
+              Visit your home
+            </h3>
+            <p class="text-warm-gray text-[14.5px] leading-[1.55]">
               Ben comes out, walks the project with you, and listens. You'll get
               a written estimate in 48 hours — no sales pressure, no upsell.
             </p>
           </div>
           <div class="process-step">
             <div class="process-num">02<small>Preparation</small></div>
-            <h3 class="mb-2.5 text-[22px] font-semibold leading-[1.3]">Prep it right</h3>
-            <p class="text-[14.5px] leading-[1.55] text-warm-gray">
+            <h3 class="mb-2.5 text-[22px] leading-[1.3] font-semibold">
+              Prep it right
+            </h3>
+            <p class="text-warm-gray text-[14.5px] leading-[1.55]">
               The job is 70% prep. We sand, patch, caulk, prime, and tape before
               a single color coat goes down. Floors and furniture get covered
               every day.
@@ -352,8 +665,10 @@ import ServicesOverview from "../components/ServicesOverview.astro";
           </div>
           <div class="process-step">
             <div class="process-num">03<small>Application</small></div>
-            <h3 class="mb-2.5 text-[22px] font-semibold leading-[1.3]">Paint to finish</h3>
-            <p class="text-[14.5px] leading-[1.55] text-warm-gray">
+            <h3 class="mb-2.5 text-[22px] leading-[1.3] font-semibold">
+              Paint to finish
+            </h3>
+            <p class="text-warm-gray text-[14.5px] leading-[1.55]">
               Two coats of premium paint, cut cleanly by hand. Daily cleanup,
               nightly walk-throughs, and a crew that treats your house like it's
               theirs.
@@ -361,8 +676,10 @@ import ServicesOverview from "../components/ServicesOverview.astro";
           </div>
           <div class="process-step">
             <div class="process-num">04<small>Inspection</small></div>
-            <h3 class="mb-2.5 text-[22px] font-semibold leading-[1.3]">Final walk-through</h3>
-            <p class="text-[14.5px] leading-[1.55] text-warm-gray">
+            <h3 class="mb-2.5 text-[22px] leading-[1.3] font-semibold">
+              Final walk-through
+            </h3>
+            <p class="text-warm-gray text-[14.5px] leading-[1.55]">
               We inspect every room together, fix anything you flag, and follow
               up a week later. A two-year workmanship guarantee comes standard.
             </p>
@@ -376,11 +693,18 @@ import ServicesOverview from "../components/ServicesOverview.astro";
       <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div class="service-area-grid">
           <div data-reveal>
-            <span class="mb-3 block font-mono text-xs uppercase tracking-[0.18em] text-teal-600">Service area</span>
-            <h2 class="font-headline text-ink mb-5 text-[clamp(32px,3.6vw,48px)] leading-[1.08]">
+            <span
+              class="mb-3 block font-mono text-xs tracking-[0.18em] text-teal-600 uppercase"
+              >Service area</span
+            >
+            <h2
+              class="font-headline text-ink mb-5 text-[clamp(32px,3.6vw,48px)] leading-[1.08]"
+            >
               Proudly serving central Bucks County.
             </h2>
-            <p class="max-w-[62ch] text-[19px] leading-[1.55] text-warm-gray mb-7">
+            <p
+              class="text-warm-gray mb-7 max-w-[62ch] text-[19px] leading-[1.55]"
+            >
               Based in Doylestown, we paint homes across a 25-mile radius — from
               the Delaware River to the edge of Montgomery County. If you're in
               central Bucks, we're your local painter.
@@ -407,7 +731,8 @@ import ServicesOverview from "../components/ServicesOverview.astro";
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="Bucks County Painters service area — Doylestown, PA">
+              title="Bucks County Painters service area — Doylestown, PA"
+            >
             </iframe>
           </div>
         </div>
@@ -415,51 +740,110 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     </section>
 
     <!-- ═══════ 9. Final CTA ═══════ -->
-    <section class="final-cta bg-teal-900 py-16 text-cream sm:py-20 md:py-24 lg:py-28" id="contact">
+    <section
+      class="final-cta text-cream bg-teal-900 py-16 sm:py-20 md:py-24 lg:py-28"
+      id="contact"
+    >
       <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div class="final-cta-grid relative z-1">
           <div data-reveal>
-            <span class="mb-3.5 block font-mono text-xs uppercase tracking-[0.18em] text-teal-300">Free estimates · no obligation</span>
-            <h2 class="font-headline text-cream mb-5 text-[clamp(32px,3.6vw,48px)] leading-[1.08] max-w-[14ch]">
+            <span
+              class="mb-3.5 block font-mono text-xs tracking-[0.18em] text-teal-300 uppercase"
+              >Free estimates · no obligation</span
+            >
+            <h2
+              class="font-headline text-cream mb-5 max-w-[14ch] text-[clamp(32px,3.6vw,48px)] leading-[1.08]"
+            >
               Ready to transform your home?
             </h2>
-            <p class="max-w-[56ch] text-[19px] leading-[1.55] text-cream/75 mb-8">
+            <p
+              class="text-cream/75 mb-8 max-w-[56ch] text-[19px] leading-[1.55]"
+            >
               Fill out the form and Ben will call you back within 24 hours. Or
               skip the form entirely and give us a ring.
             </p>
 
             <div class="flex flex-col gap-5">
               <a href="tel:+12678103352" class="flex items-center gap-4">
-                <span class="grid h-[52px] w-[52px] shrink-0 place-items-center rounded-full bg-cream/8 text-teal-400">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                <span
+                  class="bg-cream/8 grid h-[52px] w-[52px] shrink-0 place-items-center rounded-full text-teal-400"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                    ></path>
                   </svg>
                 </span>
                 <div>
-                  <div class="font-mono text-[13px] uppercase tracking-[0.14em] text-cream/60">Call</div>
-                  <div class="font-headline text-[26px] text-cream">(267) 810-3352</div>
+                  <div
+                    class="text-cream/60 font-mono text-[13px] tracking-[0.14em] uppercase"
+                  >
+                    Call
+                  </div>
+                  <div class="font-headline text-cream text-[26px]">
+                    (267) 810-3352
+                  </div>
                 </div>
               </a>
               <div class="flex items-center gap-4">
-                <span class="grid h-[52px] w-[52px] shrink-0 place-items-center rounded-full bg-cream/8 text-teal-400">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16v16H4z" /><path d="M4 4l8 8 8-8" />
+                <span
+                  class="bg-cream/8 grid h-[52px] w-[52px] shrink-0 place-items-center rounded-full text-teal-400"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M4 4h16v16H4z"></path><path d="M4 4l8 8 8-8"
+                    ></path>
                   </svg>
                 </span>
                 <div>
-                  <div class="font-mono text-[13px] uppercase tracking-[0.14em] text-cream/60">Email</div>
-                  <div class="text-[17px] text-cream">ben@buckscountypainters.com</div>
+                  <div
+                    class="text-cream/60 font-mono text-[13px] tracking-[0.14em] uppercase"
+                  >
+                    Email
+                  </div>
+                  <div class="text-cream text-[17px]">
+                    ben@buckscountypainters.com
+                  </div>
                 </div>
               </div>
               <div class="flex items-center gap-4">
-                <span class="grid h-[52px] w-[52px] shrink-0 place-items-center rounded-full bg-cream/8 text-teal-400">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+                <span
+                  class="bg-cream/8 grid h-[52px] w-[52px] shrink-0 place-items-center rounded-full text-teal-400"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle><path
+                      d="M12 6v6l4 2"></path>
                   </svg>
                 </span>
                 <div>
-                  <div class="font-mono text-[13px] uppercase tracking-[0.14em] text-cream/60">Hours</div>
-                  <div class="text-[17px] text-cream">Mon–Fri 7am–6pm · Sat by appointment</div>
+                  <div
+                    class="text-cream/60 font-mono text-[13px] tracking-[0.14em] uppercase"
+                  >
+                    Hours
+                  </div>
+                  <div class="text-cream text-[17px]">
+                    Mon–Fri 7am–6pm · Sat by appointment
+                  </div>
                 </div>
               </div>
             </div>
@@ -470,16 +854,31 @@ import ServicesOverview from "../components/ServicesOverview.astro";
               <div class="grid grid-cols-2 gap-3">
                 <div class="cta-field">
                   <label for="f-name">Your name</label>
-                  <input id="f-name" type="text" placeholder="Jane Doe" required />
+                  <input
+                    id="f-name"
+                    type="text"
+                    placeholder="Jane Doe"
+                    required
+                  />
                 </div>
                 <div class="cta-field">
                   <label for="f-phone">Phone</label>
-                  <input id="f-phone" type="tel" placeholder="(215) 555-0199" required />
+                  <input
+                    id="f-phone"
+                    type="tel"
+                    placeholder="(215) 555-0199"
+                    required
+                  />
                 </div>
               </div>
               <div class="cta-field">
                 <label for="f-email">Email</label>
-                <input id="f-email" type="email" placeholder="jane@example.com" required />
+                <input
+                  id="f-email"
+                  type="email"
+                  placeholder="jane@example.com"
+                  required
+                />
               </div>
               <div class="grid grid-cols-2 gap-3">
                 <div class="cta-field">
@@ -500,20 +899,49 @@ import ServicesOverview from "../components/ServicesOverview.astro";
               </div>
               <div class="cta-field">
                 <label for="f-msg">Tell Ben about your project</label>
-                <textarea id="f-msg" placeholder="Roughly 1,200 sq ft, first floor, neutral colors…"></textarea>
+                <textarea
+                  id="f-msg"
+                  placeholder="Roughly 1,200 sq ft, first floor, neutral colors…"
+                ></textarea>
               </div>
-              <button class="mt-3 flex w-full items-center justify-center gap-2.5 rounded-full bg-teal-500 px-[22px] py-3.5 text-[15px] font-semibold text-ink shadow-[0_6px_18px_-6px_rgba(79,163,157,0.6)] transition-all hover:-translate-y-px hover:bg-teal-400" type="submit">
+              <button
+                class="text-ink mt-3 flex w-full items-center justify-center gap-2.5 rounded-full bg-teal-500 px-[22px] py-3.5 text-[15px] font-semibold shadow-[0_6px_18px_-6px_rgba(79,163,157,0.6)] transition-all hover:-translate-y-px hover:bg-teal-400"
+                type="submit"
+              >
                 Request my estimate
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  ><path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                >
               </button>
-              <p class="mt-3.5 text-center text-xs text-cream/55">We never share your info. Typical reply in under 24 hours.</p>
+              <p class="text-cream/55 mt-3.5 text-center text-xs">
+                We never share your info. Typical reply in under 24 hours.
+              </p>
             </div>
             <div class="form-success hidden" id="formSuccess">
-              <div class="mx-auto mb-5 grid h-16 w-16 place-items-center rounded-full bg-teal-500 text-ink">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" /></svg>
+              <div
+                class="text-ink mx-auto mb-5 grid h-16 w-16 place-items-center rounded-full bg-teal-500"
+              >
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"><path d="M5 13l4 4L19 7"></path></svg
+                >
               </div>
-              <h3 class="font-headline mb-2 text-2xl font-normal text-cream">Thanks — we've got it.</h3>
-              <p class="text-[15px] text-cream/70">Ben will be in touch within 24 hours.</p>
+              <h3 class="font-headline text-cream mb-2 text-2xl font-normal">
+                Thanks — we've got it.
+              </h3>
+              <p class="text-cream/70 text-[15px]">
+                Ben will be in touch within 24 hours.
+              </p>
             </div>
           </form>
         </div>
@@ -523,7 +951,9 @@ import ServicesOverview from "../components/ServicesOverview.astro";
 
   <!-- ═══════ Scroll Reveal Observer ═══════ -->
   <script>
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
     if (!reduceMotion) {
       const observer = new IntersectionObserver(
@@ -537,16 +967,49 @@ import ServicesOverview from "../components/ServicesOverview.astro";
         },
         { threshold: 0.12 },
       );
-      document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((el) => observer.observe(el));
     } else {
-      document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("revealed"));
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((el) => el.classList.add("revealed"));
     }
 
-    /* Nav scroll state */
+    /* Nav: scrim + ink text track #trustBar position (ramp) — no long CSS crossfade “delay” */
     const nav = document.getElementById("nav");
-    window.addEventListener("scroll", () => {
-      nav?.classList.toggle("scrolled", window.scrollY > 12);
-    }, { passive: true });
+    const trustBar = document.getElementById("trustBar");
+    const reduceNavMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const navRampPx = 120;
+    function syncNavFromTrustBar() {
+      if (!nav || !trustBar) return;
+      const top = trustBar.getBoundingClientRect().top;
+      const d = top - window.innerHeight;
+      let t: number;
+      if (reduceNavMotion) {
+        t = d <= 0 ? 1 : 0;
+      } else {
+        if (d <= 0) t = 1;
+        else if (d >= navRampPx) t = 0;
+        else t = 1 - d / navRampPx;
+      }
+      nav.style.setProperty("--nav-scrim", String(t));
+      nav.classList.toggle("scrolled", t >= 0.5);
+    }
+    syncNavFromTrustBar();
+    window.addEventListener("scroll", syncNavFromTrustBar, { passive: true });
+    window.addEventListener("resize", syncNavFromTrustBar);
+    if (nav && trustBar) {
+      const barIo = new IntersectionObserver(syncNavFromTrustBar, {
+        /* Reflows when the bar enters or leaves the viewport, or is clipped */
+        root: null,
+        rootMargin: "0px",
+        threshold: [0, 0.02, 0.25, 0.5, 0.75, 1],
+      });
+      barIo.observe(trustBar);
+    }
 
     /* Testimonials carousel */
     const slides = document.querySelectorAll(".testimonial-slide");
@@ -560,40 +1023,53 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     });
     function goSlide(i: number) {
       curSlide = (i + slides.length) % slides.length;
-      slides.forEach((s, idx) => s.classList.toggle("active", idx === curSlide));
-      dotsEl?.querySelectorAll(".dot-btn").forEach((d, idx) => d.classList.toggle("active", idx === curSlide));
+      slides.forEach((s, idx) =>
+        s.classList.toggle("active", idx === curSlide),
+      );
+      dotsEl
+        ?.querySelectorAll(".dot-btn")
+        .forEach((d, idx) => d.classList.toggle("active", idx === curSlide));
     }
-    document.getElementById("tPrev")?.addEventListener("click", () => goSlide(curSlide - 1));
-    document.getElementById("tNext")?.addEventListener("click", () => goSlide(curSlide + 1));
+    document
+      .getElementById("tPrev")
+      ?.addEventListener("click", () => goSlide(curSlide - 1));
+    document
+      .getElementById("tNext")
+      ?.addEventListener("click", () => goSlide(curSlide + 1));
     let autoT = setInterval(() => goSlide(curSlide + 1), 7000);
-    document.getElementById("reviews")?.addEventListener("mouseenter", () => clearInterval(autoT));
+    document
+      .getElementById("reviews")
+      ?.addEventListener("mouseenter", () => clearInterval(autoT));
     document.getElementById("reviews")?.addEventListener("mouseleave", () => {
       autoT = setInterval(() => goSlide(curSlide + 1), 7000);
     });
 
     /* Count-up stats */
     const counters = document.querySelectorAll("[data-count]");
-    const cio = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        const el = e.target as HTMLElement;
-        const target = parseFloat(el.dataset.count || "0");
-        const decimals = parseInt(el.dataset.decimals || "0");
-        const suffix = el.dataset.suffix || "";
-        const dur = 1400;
-        const start = performance.now();
-        function tick(now: number) {
-          const t = Math.min(1, (now - start) / dur);
-          const eased = 1 - Math.pow(1 - t, 3);
-          const val = target * eased;
-          el.textContent = val.toFixed(decimals) + suffix;
-          if (t < 1) requestAnimationFrame(tick);
-          else el.textContent = target.toFixed(decimals) + suffix;
-        }
-        requestAnimationFrame(tick);
-        cio.unobserve(el);
-      });
-    }, { threshold: 0.6 });
+    const cio = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target as HTMLElement;
+          const target = parseFloat(el.dataset.count || "0");
+          const decimals = parseInt(el.dataset.decimals || "0");
+          const suffix = el.dataset.suffix || "";
+          const dur = 1400;
+          const start = performance.now();
+          function tick(now: number) {
+            const t = Math.min(1, (now - start) / dur);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const val = target * eased;
+            el.textContent = val.toFixed(decimals) + suffix;
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = target.toFixed(decimals) + suffix;
+          }
+          requestAnimationFrame(tick);
+          cio.unobserve(el);
+        });
+      },
+      { threshold: 0.6 },
+    );
     counters.forEach((c) => cio.observe(c));
 
     /* Form */
@@ -607,38 +1083,69 @@ import ServicesOverview from "../components/ServicesOverview.astro";
 </Layout>
 
 <style>
-  /* ═══════ Navigation ═══════ */
+  /* ═══════ Navigation — fixed over hero; bar fill crossfades (no blur toggle jank) ═══════ */
   .nav-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 50;
-    background: transparent;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.25s ease, background 0.25s ease, backdrop-filter 0.25s ease;
+    /* Solid stack under links — opacity driven by --nav-scrim in sync with #trustBar scroll */
+    --nav-scrim: 0;
+    --nav-surface: rgba(251, 248, 241, 0.96);
+    --nav-bar-edge: rgba(14, 42, 43, 0.08);
   }
-  .nav-header.scrolled {
-    background: rgba(251, 248, 241, 0.9);
-    backdrop-filter: saturate(160%) blur(14px);
-    -webkit-backdrop-filter: saturate(160%) blur(14px);
-    border-bottom-color: rgba(14, 42, 43, 0.08);
+  .nav-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--nav-surface);
+    box-shadow: 0 1px 0 0 var(--nav-bar-edge);
+    opacity: var(--nav-scrim);
+    transform: translateZ(0);
+    pointer-events: none;
   }
-  .nav-header:not(.scrolled) a,
+  .nav-header__bar {
+    position: relative;
+    z-index: 1;
+  }
+  .nav-link,
+  .header-brand,
+  .header-brand strong,
+  .header-brand small,
+  .phone-link,
+  .hamburger {
+    transition:
+      color 0.18s ease,
+      background 0.2s ease;
+  }
+  .phone-link svg {
+    transition: color 0.18s ease;
+  }
+  /* Over the video: light type. “Solid” state from ::before is ink. */
   .nav-header:not(.scrolled) .nav-link,
-  .nav-header:not(.scrolled) strong {
+  .nav-header:not(.scrolled) .header-brand strong {
     color: var(--color-cream);
   }
-  .nav-header:not(.scrolled) small {
-    color: rgba(251, 248, 241, 0.6);
+  .nav-header:not(.scrolled) .header-brand small {
+    color: rgba(251, 248, 241, 0.65);
+  }
+  .nav-header:not(.scrolled) .phone-link {
+    color: var(--color-cream);
   }
   .nav-header:not(.scrolled) .phone-link:hover {
-    background: rgba(251, 248, 241, 0.1);
+    background: rgba(251, 248, 241, 0.12);
   }
   .nav-header:not(.scrolled) .phone-link svg {
     color: var(--color-teal-300);
   }
   .nav-header:not(.scrolled) .hamburger {
-    background: rgba(251, 248, 241, 0.12);
+    background: rgba(251, 248, 241, 0.14);
     color: var(--color-cream);
+  }
+  .nav-header:not(.scrolled) .nav-link::after {
+    background: var(--color-teal-300);
   }
 
   .nav-link {
@@ -649,22 +1156,26 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     color: var(--color-ink);
   }
   .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
-    left: 0; right: 0; bottom: 2px;
+    left: 0;
+    right: 0;
+    bottom: 2px;
     height: 1px;
     background: var(--color-teal-700);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
   }
-  .nav-link:hover::after { transform: scaleX(1); }
-  .nav-header:not(.scrolled) .nav-link::after { background: var(--color-teal-300); }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
 
   .nav-link-chevron::before {
-    content: '';
+    content: "";
     display: inline-block;
-    width: 6px; height: 6px;
+    width: 6px;
+    height: 6px;
     border-right: 1.5px solid currentColor;
     border-bottom: 1.5px solid currentColor;
     transform: rotate(45deg) translateY(-2px);
@@ -674,17 +1185,20 @@ import ServicesOverview from "../components/ServicesOverview.astro";
 
   .submenu {
     position: absolute;
-    top: 100%; left: -16px;
+    top: 100%;
+    left: -16px;
     background: var(--color-cream);
     padding: 12px;
     border-radius: 12px;
-    box-shadow: 0 30px 60px -20px rgba(14,42,43,0.35);
+    box-shadow: 0 30px 60px -20px rgba(14, 42, 43, 0.35);
     min-width: 220px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(6px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    border: 1px solid rgba(14,42,43,0.06);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    border: 1px solid rgba(14, 42, 43, 0.06);
   }
   .group:hover .submenu {
     opacity: 1;
@@ -699,8 +1213,12 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     font-weight: 500;
     color: var(--color-ink) !important;
   }
-  .submenu a:hover { background: var(--color-cream-2); }
-  .submenu a::after { display: none !important; }
+  .submenu a:hover {
+    background: var(--color-cream-2);
+  }
+  .submenu a::after {
+    display: none !important;
+  }
 
   /* ═══════ Trust Bar ═══════ */
   .trust-bar-grid {
@@ -713,25 +1231,35 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     display: flex;
     align-items: center;
     gap: 14px;
-    border-right: 1px solid rgba(251,248,241,0.12);
+    border-right: 1px solid rgba(251, 248, 241, 0.12);
     padding-right: 24px;
   }
-  .trust-cell:last-child { border-right: none; }
+  .trust-cell:last-child {
+    border-right: none;
+  }
   .trust-icon {
-    width: 44px; height: 44px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(251,248,241,0.08);
+    background: rgba(251, 248, 241, 0.08);
     display: grid;
     place-items: center;
     color: var(--color-teal-400);
     flex-shrink: 0;
   }
   @media (max-width: 1024px) {
-    .trust-bar-grid { grid-template-columns: repeat(2, 1fr); }
-    .trust-cell { border-right: none; padding-right: 0; }
+    .trust-bar-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .trust-cell {
+      border-right: none;
+      padding-right: 0;
+    }
   }
   @media (max-width: 640px) {
-    .trust-bar-grid { grid-template-columns: 1fr; }
+    .trust-bar-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ═══════ About ═══════ */
@@ -741,21 +1269,30 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     gap: 72px;
     align-items: center;
   }
-  .about-photo { position: relative; }
+  .about-photo {
+    position: relative;
+  }
   .about-meta-grid {
     margin-top: 32px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     padding-top: 24px;
-    border-top: 1px solid rgba(14,42,43,0.12);
+    border-top: 1px solid rgba(14, 42, 43, 0.12);
   }
   @media (max-width: 1024px) {
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .about-meta-grid { grid-template-columns: repeat(3, 1fr); }
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .about-meta-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   @media (max-width: 640px) {
-    .about-meta-grid { grid-template-columns: 1fr; }
+    .about-meta-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ═══════ Portfolio ═══════ */
@@ -773,11 +1310,17 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     background: var(--color-teal-800);
     transition: transform 0.3s ease;
   }
-  .portfolio-item:hover { transform: scale(1.01); }
+  .portfolio-item:hover {
+    transform: scale(1.01);
+  }
   .portfolio-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(14,42,43,0.75) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(14, 42, 43, 0.75) 100%
+    );
     padding: 18px;
     display: flex;
     flex-direction: column;
@@ -786,7 +1329,9 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+  .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+  }
   .portfolio-overlay b {
     font-family: var(--font-headline);
     font-size: 20px;
@@ -802,24 +1347,43 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     text-transform: uppercase;
   }
   @media (max-width: 1024px) {
-    .portfolio-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 140px; }
+    .portfolio-grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 140px;
+    }
   }
   @media (max-width: 640px) {
-    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   /* ═══════ Testimonials ═══════ */
-  .testimonials-section { position: relative; overflow: hidden; }
+  .testimonials-section {
+    position: relative;
+    overflow: hidden;
+  }
   .testimonials-section::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 800px 400px at 80% 20%, rgba(79,163,157,0.15), transparent),
-      radial-gradient(ellipse 600px 300px at 10% 80%, rgba(79,163,157,0.12), transparent);
+      radial-gradient(
+        ellipse 800px 400px at 80% 20%,
+        rgba(79, 163, 157, 0.15),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 600px 300px at 10% 80%,
+        rgba(79, 163, 157, 0.12),
+        transparent
+      );
     pointer-events: none;
   }
-  .testimonial-track { position: relative; min-height: 280px; }
+  .testimonial-track {
+    position: relative;
+    min-height: 280px;
+  }
   .testimonial-slide {
     opacity: 0;
     position: absolute;
@@ -829,30 +1393,39 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     flex-direction: column;
     justify-content: center;
   }
-  .testimonial-slide.active { opacity: 1; position: relative; }
+  .testimonial-slide.active {
+    opacity: 1;
+    position: relative;
+  }
   .dot-btn {
-    width: 32px; height: 3px;
+    width: 32px;
+    height: 3px;
     border-radius: 2px;
-    background: rgba(251,248,241,0.2);
+    background: rgba(251, 248, 241, 0.2);
     border: none;
     cursor: pointer;
     transition: background 0.2s ease;
   }
-  .dot-btn.active { background: var(--color-teal-400); }
+  .dot-btn.active {
+    background: var(--color-teal-400);
+  }
   .arrow-btn {
-    width: 48px; height: 48px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    border: 1px solid rgba(251,248,241,0.25);
+    border: 1px solid rgba(251, 248, 241, 0.25);
     display: grid;
     place-items: center;
     color: var(--color-cream);
     background: none;
     cursor: pointer;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
   }
   .arrow-btn:hover {
     border-color: var(--color-teal-400);
-    background: rgba(79,163,157,0.1);
+    background: rgba(79, 163, 157, 0.1);
   }
 
   /* ═══════ Process ═══════ */
@@ -861,7 +1434,9 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
-  .process-step { padding: 32px 24px 32px 0; }
+  .process-step {
+    padding: 32px 24px 32px 0;
+  }
   .process-num {
     font-family: var(--font-headline);
     font-size: 56px;
@@ -881,11 +1456,17 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     text-transform: uppercase;
   }
   @media (max-width: 1024px) {
-    .process-grid { grid-template-columns: 1fr 1fr; }
-    .process-step { border-bottom: 1px dashed rgba(14,42,43,0.18); }
+    .process-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .process-step {
+      border-bottom: 1px dashed rgba(14, 42, 43, 0.18);
+    }
   }
   @media (max-width: 640px) {
-    .process-grid { grid-template-columns: 1fr; }
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ═══════ Service Area ═══════ */
@@ -899,8 +1480,10 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     aspect-ratio: 5/4;
     border-radius: 22px;
     overflow: hidden;
-    border: 1px solid rgba(14,42,43,0.08);
-    box-shadow: 0 1px 2px rgba(14,42,43,0.06), 0 2px 8px rgba(14,42,43,0.04);
+    border: 1px solid rgba(14, 42, 43, 0.08);
+    box-shadow:
+      0 1px 2px rgba(14, 42, 43, 0.06),
+      0 2px 8px rgba(14, 42, 43, 0.04);
   }
   .towns-grid {
     display: grid;
@@ -917,7 +1500,7 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     justify-content: space-between;
     align-items: baseline;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(14,42,43,0.08);
+    border-bottom: 1px solid rgba(14, 42, 43, 0.08);
   }
   .towns-grid li span {
     font-family: var(--font-mono);
@@ -925,26 +1508,36 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     color: var(--color-warm-gray);
   }
   @media (max-width: 1024px) {
-    .service-area-grid { grid-template-columns: 1fr; gap: 48px; }
+    .service-area-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
   }
 
   /* ═══════ Final CTA ═══════ */
-  .final-cta { position: relative; overflow: hidden; }
+  .final-cta {
+    position: relative;
+    overflow: hidden;
+  }
   .final-cta::before {
-    content: '';
+    content: "";
     position: absolute;
-    left: -10%; top: -30%;
-    width: 500px; height: 500px;
+    left: -10%;
+    top: -30%;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     background: var(--color-teal-700);
     opacity: 0.4;
     filter: blur(80px);
   }
   .final-cta::after {
-    content: '';
+    content: "";
     position: absolute;
-    right: -5%; bottom: -30%;
-    width: 400px; height: 400px;
+    right: -5%;
+    bottom: -30%;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     background: var(--color-teal-500);
     opacity: 0.25;
@@ -957,52 +1550,66 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     align-items: center;
   }
   .cta-form {
-    background: rgba(251,248,241,0.05);
+    background: rgba(251, 248, 241, 0.05);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(251,248,241,0.12);
+    border: 1px solid rgba(251, 248, 241, 0.12);
     border-radius: 22px;
     padding: 36px;
   }
-  .cta-field { margin-bottom: 16px; }
+  .cta-field {
+    margin-bottom: 16px;
+  }
   .cta-field label {
     display: block;
     font-size: 12px;
     font-family: var(--font-mono);
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(251,248,241,0.7);
+    color: rgba(251, 248, 241, 0.7);
     margin-bottom: 8px;
   }
   .cta-field input,
   .cta-field select,
   .cta-field textarea {
     width: 100%;
-    background: rgba(251,248,241,0.08);
-    border: 1px solid rgba(251,248,241,0.15);
+    background: rgba(251, 248, 241, 0.08);
+    border: 1px solid rgba(251, 248, 241, 0.15);
     border-radius: 6px;
     padding: 14px 16px;
     font-family: var(--font-body);
     font-size: 15px;
     color: var(--color-cream);
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
   }
   .cta-field input::placeholder,
-  .cta-field textarea::placeholder { color: rgba(251,248,241,0.4); }
+  .cta-field textarea::placeholder {
+    color: rgba(251, 248, 241, 0.4);
+  }
   .cta-field input:focus,
   .cta-field select:focus,
   .cta-field textarea:focus {
     outline: none;
     border-color: var(--color-teal-400);
-    background: rgba(251,248,241,0.12);
+    background: rgba(251, 248, 241, 0.12);
   }
   .cta-field textarea {
     resize: vertical;
     min-height: 90px;
     font-family: var(--font-body);
   }
-  .cta-field select option { color: var(--color-ink); }
-  .form-success { text-align: center; padding: 40px 20px; }
+  .cta-field select option {
+    color: var(--color-ink);
+  }
+  .form-success {
+    text-align: center;
+    padding: 40px 20px;
+  }
   @media (max-width: 1024px) {
-    .final-cta-grid { grid-template-columns: 1fr; gap: 40px; }
+    .final-cta-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
   }
 </style>

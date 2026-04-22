@@ -106,6 +106,8 @@
 
   html {
     @apply scroll-smooth antialiased;
+    /* Fixed nav clears document flow; offset #anchors past the bar */
+    scroll-padding-top: 5.5rem;
   }
 
   body {
