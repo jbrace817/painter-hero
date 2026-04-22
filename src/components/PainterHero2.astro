@@ -84,8 +84,6 @@
   /* ───────── Scaffold ───────── */
 
   .painter-hero-2 {
-    --ph2-accent: var(--color-primary, #765a23);
-    --ph2-accent-bright: var(--color-tertiary, #7d5800);
     --ph2-runway: 600vh;
     position: relative;
     height: var(--ph2-runway);
@@ -161,7 +159,7 @@
   .hero-progress-fill {
     height: 100%;
     width: 0%;
-    background: var(--ph2-accent-bright);
+    background: var(--color-teal-400);
     transition: width 0.05s linear;
   }
 
@@ -270,47 +268,55 @@
     font-family: var(--font-body);
     font-size: 0.9375rem;
     font-weight: 600;
-    border-radius: 8px;
+    line-height: 1.2;
+    border-radius: 9999px;
     text-decoration: none;
-    padding: 0.875rem 1.875rem;
+    padding: 0.875rem 1.375rem;
     transition:
-      transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
-      background 0.2s,
-      border-color 0.2s,
-      box-shadow 0.24s;
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease;
     cursor: pointer;
   }
 
+  /* Matches nav-cta, contact form submit: teal-500, ink text, soft teal shadow */
   .btn-primary {
-    background: var(--ph2-accent);
-    color: var(--color-on-primary, #fff);
-    box-shadow: 0 2px 12px rgba(118, 90, 35, 0.4);
+    background: var(--color-teal-500);
+    color: var(--color-ink);
+    border: 1px solid transparent;
+    box-shadow: 0 6px 18px -6px rgba(79, 163, 157, 0.6);
   }
   .btn-primary:hover {
-    background: var(--ph2-accent-bright);
-    transform: scale(1.04);
-    box-shadow: 0 6px 24px rgba(118, 90, 35, 0.5);
+    background: var(--color-teal-400);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px -6px rgba(79, 163, 157, 0.55);
   }
   .btn-primary:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--color-cream);
     outline-offset: 3px;
-    box-shadow: 0 0 0 4px rgba(118, 90, 35, 0.45);
+    box-shadow:
+      0 6px 18px -6px rgba(79, 163, 157, 0.6),
+      0 0 0 4px rgba(79, 163, 157, 0.35);
   }
 
+  /* Transparent on video; border/text echo site teal like outline CTAs on light sections */
   .btn-outline {
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    color: var(--color-cream);
+    background: rgba(12, 44, 44, 0.12);
+    border: 1.5px solid rgba(166, 222, 218, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: scale(1.04);
+    background: rgba(79, 163, 157, 0.22);
+    border-color: var(--color-teal-400);
+    color: #fff;
+    transform: translateY(-1px);
   }
   .btn-outline:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--color-teal-300);
     outline-offset: 3px;
   }
 

@@ -354,7 +354,7 @@ import ServicesOverview from "../components/ServicesOverview.astro";
                 >
               </div>
             </div>
-            <div class="mt-8">
+            <div class="mt-8 flex justify-center md:mt-16 xl:justify-start">
               <a
                 href="#"
                 class="border-ink/18 text-ink hover:border-ink inline-flex items-center gap-2.5 rounded-full border px-[22px] py-3.5 text-[15px] font-semibold transition-all hover:-translate-y-px"
@@ -636,7 +636,8 @@ import ServicesOverview from "../components/ServicesOverview.astro";
         <div
           class="border-cream/12 mt-12 flex items-center justify-between border-t pt-8"
         >
-          <div class="flex gap-2.5" id="tDots"></div>
+          <div class="testimonial-dots flex items-center gap-3" id="tDots">
+          </div>
           <div class="flex gap-2.5">
             <button class="arrow-btn" id="tPrev" aria-label="Previous">
               <svg
@@ -1138,7 +1139,13 @@ import ServicesOverview from "../components/ServicesOverview.astro";
     let curSlide = 0;
     slides.forEach((_, i) => {
       const b = document.createElement("button");
+      b.type = "button";
       b.className = "dot-btn" + (i === 0 ? " active" : "");
+      b.setAttribute(
+        "aria-label",
+        `Go to testimonial ${i + 1} of ${slides.length}`,
+      );
+      if (i === 0) b.setAttribute("aria-current", "true");
       b.addEventListener("click", () => goSlide(i));
       dotsEl?.appendChild(b);
     });
@@ -1147,9 +1154,12 @@ import ServicesOverview from "../components/ServicesOverview.astro";
       slides.forEach((s, idx) =>
         s.classList.toggle("active", idx === curSlide),
       );
-      dotsEl
-        ?.querySelectorAll(".dot-btn")
-        .forEach((d, idx) => d.classList.toggle("active", idx === curSlide));
+      dotsEl?.querySelectorAll(".dot-btn").forEach((d, idx) => {
+        const isActive = idx === curSlide;
+        d.classList.toggle("active", isActive);
+        if (isActive) d.setAttribute("aria-current", "true");
+        else d.removeAttribute("aria-current");
+      });
     }
     document
       .getElementById("tPrev")
@@ -1665,32 +1675,80 @@ import ServicesOverview from "../components/ServicesOverview.astro";
   }
   .testimonial-track {
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    /* Row height follows the tallest slide; all slides share one cell */
     min-height: 280px;
   }
   .testimonial-slide {
+    grid-area: 1 / 1;
     opacity: 0;
-    position: absolute;
-    inset: 0;
-    transition: opacity 0.5s ease;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .testimonial-slide.active {
     opacity: 1;
-    position: relative;
+    pointer-events: auto;
+    transform: translateY(0);
   }
-  .dot-btn {
-    width: 32px;
-    height: 3px;
-    border-radius: 2px;
-    background: rgba(251, 248, 241, 0.2);
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-slide {
+      transform: none;
+      transition: opacity 0.35s ease;
+    }
+    .testimonial-slide.active {
+      transform: none;
+    }
+  }
+  /* Pill indicators — :global(.dot-btn) so JS-appended buttons match (Astro scoped CSS) */
+  .testimonial-dots {
+    min-height: 44px;
+  }
+  .testimonial-dots :global(.dot-btn) {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
     border: none;
+    background: transparent;
     cursor: pointer;
-    transition: background 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
   }
-  .dot-btn.active {
+  .testimonial-dots :global(.dot-btn::after) {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 6px;
+    border-radius: 9999px;
+    background: rgba(251, 248, 241, 0.22);
+    transition:
+      background 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.35s ease;
+  }
+  .testimonial-dots :global(.dot-btn:hover::after) {
+    background: rgba(251, 248, 241, 0.32);
+  }
+  .testimonial-dots :global(.dot-btn:focus-visible) {
+    outline: 2px solid var(--color-teal-400);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  .testimonial-dots :global(.dot-btn.active::after) {
     background: var(--color-teal-400);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-dots :global(.dot-btn::after) {
+      transition: background 0.2s ease;
+    }
   }
   .arrow-btn {
     width: 48px;
