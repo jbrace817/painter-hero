@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import PainterHero from "../components/PainterHero.astro";
 import PainterHero2 from "../components/PainterHero2.astro";
+import ServicesOverview from "../components/ServicesOverview.astro";
 ---
 
 <Layout title="Bucks County Painters | Meticulous Craftsmanship">
@@ -101,113 +102,7 @@ import PainterHero2 from "../components/PainterHero2.astro";
     </section>
 
     <!-- ═══════ 3. Services Overview ═══════ -->
-    <section class="bg-surface py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <div class="mb-10 sm:mb-12 md:mb-16" data-reveal>
-          <h2
-            class="font-headline text-primary mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]"
-          >
-            Masterful Services
-          </h2>
-          <div class="bg-primary-container h-1 w-20 sm:w-24"></div>
-        </div>
-
-        <div
-          class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-10 xl:gap-12"
-        >
-          <!-- Interior -->
-          <div
-            class="bg-surface-container-lowest group overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            data-reveal
-          >
-            <div class="aspect-[4/3] overflow-hidden">
-              <img
-                alt="Modern minimalist bedroom with smooth charcoal grey accent wall and crisp white trim details"
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XIWQZnOZngyWNNuUKohdH3tLcuQxy0XXXA8t5TJgEluHewVBgG7nhIYRL3KSFgI41I1ftdZtcGND8s_cJRf7etvsb3h7ivNveaTjqdbly3_X8Y9wUvuuqw98EmfxPF1FzVLidD0LC4fhWT1UCo4rASkWW4-2dTER9PLzgHgFboIcDTvmkUjocUyUdu_oJHGiPkCD5DoCiD8J992C0OsO9AgWMLD2aWm-ZPhFT7Jb-GalSDMtb-pIGDpxgxg6FEn-jTVnvAg7DJs"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 sm:p-8">
-              <h3 class="font-headline mb-3 text-xl sm:text-2xl">
-                Interior Painting
-              </h3>
-              <p
-                class="font-body text-on-surface-variant mb-6 text-sm leading-relaxed sm:text-base"
-              >
-                Wall-to-wall precision including trim, crown molding, and
-                ceiling finishes.
-              </p>
-              <a
-                class="border-primary-container text-primary hover:border-primary inline-block border-b-2 pb-1 text-xs font-bold tracking-widest uppercase transition-colors sm:text-sm"
-                href="#">Explore Interior</a
-              >
-            </div>
-          </div>
-
-          <!-- Exterior -->
-          <div
-            class="bg-surface-container-lowest group overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            data-reveal
-          >
-            <div class="aspect-[4/3] overflow-hidden">
-              <img
-                alt="Well-maintained historic colonial house in Bucks County with fresh white siding and navy blue shutters"
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPG5J0bPo-gzfFNMicWfQu0CT2fKMGIho0evSipnk399b1HfT4bmN6x6SoCmpLyS-8ZbP_bv5i8q-zELpuaQi6a7BRMKRHY2KktFaJJev2tdZ_iWYdP411kQf2GWTRuBlDRW5yoWC_HY3nie_mcsKkzGynKQfK_9l9uNWOi_pDEZmYeh8y5qY_mcuazP0OVOLGSOhCHlfGXkinpIkoYavIKLH4XOK6SYcI01j604R_Wm0vuqvcxTJ6BrTH3Iu5sl_D3pH2vr2jYA"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 sm:p-8">
-              <h3 class="font-headline mb-3 text-xl sm:text-2xl">
-                Exterior Refinishing
-              </h3>
-              <p
-                class="font-body text-on-surface-variant mb-6 text-sm leading-relaxed sm:text-base"
-              >
-                Weather-resistant protection for siding, shutters, and masonry
-                elements.
-              </p>
-              <a
-                class="border-primary-container text-primary hover:border-primary inline-block border-b-2 pb-1 text-xs font-bold tracking-widest uppercase transition-colors sm:text-sm"
-                href="#">Explore Exterior</a
-              >
-            </div>
-          </div>
-
-          <!-- Decks -->
-          <div
-            class="bg-surface-container-lowest group overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:col-span-2 md:col-span-1"
-            data-reveal
-          >
-            <div class="aspect-[4/3] overflow-hidden">
-              <img
-                alt="Outdoor cedar wood deck with fresh semi-transparent stain showing rich wood grain and water-beading protection"
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1lMb9tsFrHRrTCCT_JNSNTWe_jdpkOB0RfEGMWhrHNdmo3Cok7AL4AEInCcqSmrhH9nLvGMGsqPr74PdoI2SV5gQwfsZRHNUpNeVRQxJ0K0azw06z5V6-5fVmCVvzib-a_ZZFeIZ71p0YLD1Yr9gc51iF2cGQ6Jqiak5bGF9nYTrMOJo4aFTlOyQGAGSVvey2m3IYopYofvxzMu-4PAXgMCGvCnZyGbJ_JBcJiXawvlrW7eewJ3V4_GTk3zJ-NT0g3SR81jGiYE"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 sm:p-8">
-              <h3 class="font-headline mb-3 text-xl sm:text-2xl">
-                Deck &amp; Wood Care
-              </h3>
-              <p
-                class="font-body text-on-surface-variant mb-6 text-sm leading-relaxed sm:text-base"
-              >
-                Comprehensive staining and sealing to preserve your outdoor
-                living spaces.
-              </p>
-              <a
-                class="border-primary-container text-primary hover:border-primary inline-block border-b-2 pb-1 text-xs font-bold tracking-widest uppercase transition-colors sm:text-sm"
-                href="#">Explore Decks</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <ServicesOverview />
     <!-- ═══════ 4. About Teaser ═══════ -->
     <section
       class="bg-secondary text-surface relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
