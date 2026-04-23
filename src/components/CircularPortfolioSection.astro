@@ -1,0 +1,229 @@
+---
+import CircularPortfolio from "./CircularPortfolio";
+
+interface PortfolioItem {
+  title: string;
+  location: string;
+  description: string;
+  src: string;
+}
+
+interface Props {
+  label?: string;
+  heading?: string;
+  items?: PortfolioItem[];
+  autoplay?: boolean;
+}
+
+const {
+  label = "Recent work",
+  heading = "A few projects from this year.",
+  autoplay = true,
+  items = [
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCM-YEBQH7bswO-5atb1gQjJ_gPOzEVRkv1q995Qh2qK6CWCez7yZ5Pg1HDkpMw0l6xNiPs1TnPX7wHFQa5rDZ5AabSKa5vbMeQ6xoSS8iffdK9EuRXlbjk_o3cBa3Lh3mXH6s84aSAW0vLZCK1sr6fzL7v2TK0L5uctZwlBK1mCpYEmy4ZZPJ0pvriZ1Y1zNfU1FeLL9JNMph7U-7KqlxKlXz_ilzz1KsQcZ0j59kWiIMHbvSWJyoi4xSlZzu4uFlwZkqbj72AM7E",
+      title: "Colonial living room",
+      location: "Doylestown · Interior",
+      description:
+        "A complete transformation of this 1920s colonial living room. We restored the original crown molding and applied a warm, heritage-inspired palette that honors the home's character while feeling fresh and contemporary.",
+    },
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJmnzHsEBONJp8EoxoUYkY8aNU96y8uqFIhTEwj5j4nmdshMU27SJDhbt0FaowcrFjfXqo8z_YHSeN3pOtDNmoc3Htma2wrhadE4Etgeodps3Z5Or8wHEnz2IlegPKHFSA5v7zjui7S-nntkebb_oqlGlHePgJDOLnYusr06MVbpm5DXi5_vf8UerT4lCjosrzdakBRHY2YivRCg1_SVJTH-yd_u41zwvVS1J4sm88fRrk2g1Cyd75pzhmeIThZ1pWwGkD-jHbdi0",
+      title: "Cape Cod exterior",
+      location: "New Hope · Exterior",
+      description:
+        "Full exterior repaint on this classic Cape Cod. We prepped every surface by hand, replaced rotted trim, and applied a crisp white with deep navy shutters that makes this home the standout on the street.",
+    },
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuArroNn32xYtx-vxPMLq_M0qSyort1QmVSIJLQDPcnk10GAaxXODlGVVowo_QJbywYd0gC1y3EKdFqqlvX89hAdCQuVg9FIt9e7Bejf4SexP2xMJqJKiza2Elhx21xU72wM9L2bO57MNZDS5NS6djCD260wsei2AUTamuocGDmTrXdjKHeePXtNEDfP-2_qEdr8GkzpWB6zVyS7n42hvjb0auPUvWE8rUeDcVs5O6HO5xjK7rAyA8sbAETgc0pDVDXTH0TIW6YbeQA",
+      title: "Cedar deck refinish",
+      location: "Warrington · Deck",
+      description:
+        "This weathered cedar deck was brought back to life with a thorough sanding, stain stripping, and two coats of a semi-transparent teak stain. The result is a warm, inviting outdoor space that looks brand new.",
+    },
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKcQgLnJNh7IwGUxNM7wO6JBwHtgWfbTTjtcinWUzT7FqXhDj5jG7mSx9g1CSIrdH85BfV4GL2qgmwBnnv4aOQakOJN6IY1ASnY643j40CSg9YNwDBnXygU7qhaQOrTAmg-89OE63T964GlH9RmzJraYY1gwsQt8K9jfRW4LSkQUFICAeGgFAcRbA5CTYDXcVoiNa7HnPeiVXFlA4wJa5fmxIkwR3Lz0K6cz1IpX45RPaAr2xi6fGUKQeXygMo_pe0m_tpfuv09xo",
+      title: "White oak cabinets",
+      location: "Solebury · Cabinetry",
+      description:
+        "Custom cabinet refinishing in white oak. We stripped the old lacquer, sanded to bare wood, and applied a hand-rubbed oil finish that highlights the natural grain while providing lasting protection.",
+    },
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDyPG5J0bPo-gzfFNMicWfQu0CT2fKMGIho0evSipnk399b1HfT4bmN6x6SoCmpLyS-8ZbP_bv5i8q-zELpuaQi6a7BRMKRHY2KktFaJJev2tdZ_iWYdP411kQf2GWTRuBlDRW5yoWC_HY3nie_mcsKkzGynKQfK_9l9uNWOi_pDEZmYeh8y5qY_mcuazP0OVOLGSOhCHlfGXkinpIkoYavIKLH4XOK6SYcI01j604R_Wm0vuqvcxTJ6BrTH3Iu5sl_D3pH2vr2jYA",
+      title: "Farmhouse siding",
+      location: "Plumstead · Exterior",
+      description:
+        "A beautiful farmhouse exterior refresh. We repaired aging clapboard siding, primed with a high-adhesion primer, and finished with two coats of durable acrylic in a classic sage green.",
+    },
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuC88vmPscUHBdiyVHOFybAjsDMc2cHQb6SDXK7vncVHdGAmaJTOWMcQcscZrkoRsl7R35A4BlqhLK4F2v2s0srgPLjyU-X9IAn6qPJx7ypfcPEjm7TrZBraFbSLvwU8XLrmVVaV85FVZys6ooc7LCUujJ07IOw5nFRXTFuK-43brBu36MTZBQSNkorkYk823Xva1_l7SNWpIa6My_YhjVHEOmyXW4gZWlElXq8xYsVCBKQIt9Mjes-PzWgW4odQfYf2XWVXINvPmdE",
+      title: "Kitchen refresh",
+      location: "Buckingham · Interior",
+      description:
+        "This kitchen got a complete color overhaul with rich navy cabinets, bright white walls, and brass hardware accents. The deep tones pair beautifully with the marble countertops for a timeless look.",
+    },
+  ],
+} = Astro.props;
+---
+
+<CircularPortfolio
+  items={items}
+  label={label}
+  heading={heading}
+  autoplay={autoplay}
+  client:visible
+/>
+
+<style is:global>
+  .cp-section {
+    padding: 4rem 0;
+  }
+  @media (min-width: 640px) {
+    .cp-section {
+      padding: 5rem 0;
+    }
+  }
+  @media (min-width: 768px) {
+    .cp-section {
+      padding: 6rem 0;
+    }
+  }
+  @media (min-width: 1024px) {
+    .cp-section {
+      padding: 7rem 0;
+    }
+  }
+
+  .cp-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .cp-wrapper {
+      padding: 0 2rem;
+    }
+  }
+
+  .cp-header {
+    margin-bottom: 3.5rem;
+    text-align: center;
+  }
+
+  .cp-label {
+    display: block;
+    margin-bottom: 0.875rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-teal-600);
+  }
+
+  .cp-heading {
+    font-family: var(--font-headline);
+    color: var(--color-ink);
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.08;
+    font-weight: 400;
+  }
+
+  .cp-grid {
+    display: grid;
+    gap: 3rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .cp-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+
+  .cp-images {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    perspective: 1000px;
+  }
+  @media (min-width: 640px) {
+    .cp-images {
+      height: 24rem;
+    }
+  }
+
+  .cp-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(14, 42, 43, 0.2);
+  }
+
+  .cp-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 16rem;
+  }
+
+  .cp-title {
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-ink);
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+
+  .cp-location {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-teal-600);
+    margin-bottom: 1.5rem;
+  }
+
+  .cp-description {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-warm-gray);
+  }
+
+  .cp-word {
+    display: inline-block;
+  }
+
+  .cp-arrows {
+    display: flex;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    .cp-arrows {
+      padding-top: 0;
+    }
+  }
+
+  .cp-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    outline: none;
+  }
+  .cp-arrow:focus-visible {
+    outline: 2px solid var(--color-teal-400);
+    outline-offset: 2px;
+  }
+</style>
