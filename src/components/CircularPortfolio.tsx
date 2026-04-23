@@ -24,16 +24,14 @@ interface CircularPortfolioProps {
 }
 
 function calculateGap(width: number) {
-  const minWidth = 1024;
-  const maxWidth = 1456;
-  const minGap = 60;
-  const maxGap = 86;
+  const minWidth = 300;
+  const maxWidth = 600;
+  const minGap = 36;
+  const maxGap = 64;
   if (width <= minWidth) return minGap;
-  if (width >= maxWidth)
-    return Math.max(minGap, maxGap + 0.06018 * (width - maxWidth));
+  if (width >= maxWidth) return maxGap;
   return (
-    minGap +
-    (maxGap - minGap) * ((width - minWidth) / (maxWidth - minWidth))
+    minGap + (maxGap - minGap) * ((width - minWidth) / (maxWidth - minWidth))
   );
 }
 
@@ -50,14 +48,11 @@ export default function CircularPortfolio({
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
-    null
+    null,
   );
 
   const itemsLength = useMemo(() => items.length, [items]);
-  const activeItem = useMemo(
-    () => items[activeIndex],
-    [activeIndex, items]
-  );
+  const activeItem = useMemo(() => items[activeIndex], [activeIndex, items]);
 
   useEffect(() => {
     function handleResize() {
@@ -84,16 +79,12 @@ export default function CircularPortfolio({
 
   const handleNext = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % itemsLength);
-    if (autoplayIntervalRef.current)
-      clearInterval(autoplayIntervalRef.current);
+    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
   }, [itemsLength]);
 
   const handlePrev = useCallback(() => {
-    setActiveIndex(
-      (prev) => (prev - 1 + itemsLength) % itemsLength
-    );
-    if (autoplayIntervalRef.current)
-      clearInterval(autoplayIntervalRef.current);
+    setActiveIndex((prev) => (prev - 1 + itemsLength) % itemsLength);
+    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
   }, [itemsLength]);
 
   useEffect(() => {
@@ -107,10 +98,9 @@ export default function CircularPortfolio({
 
   function getImageStyle(index: number): React.CSSProperties {
     const gap = calculateGap(containerWidth);
-    const maxStickUp = gap * 0.8;
+    const maxStickUp = gap * 0.35;
     const isActive = index === activeIndex;
-    const isLeft =
-      (activeIndex - 1 + itemsLength) % itemsLength === index;
+    const isLeft = (activeIndex - 1 + itemsLength) % itemsLength === index;
     const isRight = (activeIndex + 1) % itemsLength === index;
 
     if (isActive) {
@@ -127,7 +117,7 @@ export default function CircularPortfolio({
         zIndex: 2,
         opacity: 1,
         pointerEvents: "auto",
-        transform: `translateX(-${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(15deg)`,
+        transform: `translateX(-${gap}px) translateY(-${maxStickUp}px) scale(0.92) rotateY(8deg)`,
         transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
       };
     }
@@ -136,7 +126,7 @@ export default function CircularPortfolio({
         zIndex: 2,
         opacity: 1,
         pointerEvents: "auto",
-        transform: `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(-15deg)`,
+        transform: `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.92) rotateY(-8deg)`,
         transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
       };
     }
