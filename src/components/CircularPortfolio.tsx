@@ -35,6 +35,8 @@ function calculateGap(width: number) {
   );
 }
 
+const SWIPE_MIN_PX = 50;
+
 export default function CircularPortfolio({
   items,
   label = "Recent work",
@@ -47,6 +49,7 @@ export default function CircularPortfolio({
   const [containerWidth, setContainerWidth] = useState(1200);
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
     null,
   );
@@ -86,6 +89,31 @@ export default function CircularPortfolio({
     setActiveIndex((prev) => (prev - 1 + itemsLength) % itemsLength);
     if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
   }, [itemsLength]);
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStartRef.current = { x: t.clientX, y: t.clientY };
+  }, []);
+
+  const onTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      const start = touchStartRef.current;
+      touchStartRef.current = null;
+      if (start == null) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      if (Math.abs(dy) > Math.abs(dx)) return;
+      if (Math.abs(dx) < SWIPE_MIN_PX) return;
+      if (dx < 0) handleNext();
+      else handlePrev();
+    },
+    [handleNext, handlePrev],
+  );
+
+  const onTouchCancel = useCallback(() => {
+    touchStartRef.current = null;
+  }, []);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -152,7 +180,12 @@ export default function CircularPortfolio({
           <h2 className="cp-heading">{heading}</h2>
         </div>
 
-        <div className="cp-grid">
+        <div
+          className="cp-grid"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          onTouchCancel={onTouchCancel}
+        >
           <div className="cp-images" ref={imageContainerRef}>
             {items.map((item, index) => (
               <img
@@ -165,37 +198,39 @@ export default function CircularPortfolio({
             ))}
           </div>
 
-          <div className="cp-content">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                variants={quoteVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <h3 className="cp-title">{activeItem.title}</h3>
-                <p className="cp-location">{activeItem.location}</p>
-                <motion.p className="cp-description">
-                  {activeItem.description.split(" ").map((word, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
-                      animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.22,
-                        ease: "easeInOut",
-                        delay: 0.025 * i,
-                      }}
-                      className="cp-word"
-                    >
-                      {word}&nbsp;
-                    </motion.span>
-                  ))}
-                </motion.p>
-              </motion.div>
-            </AnimatePresence>
+          <div className="cp-right">
+            <div className="cp-text">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  variants={quoteVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <h3 className="cp-title">{activeItem.title}</h3>
+                  <p className="cp-location">{activeItem.location}</p>
+                  <motion.p className="cp-description">
+                    {activeItem.description.split(" ").map((word, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
+                        animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.22,
+                          ease: "easeInOut",
+                          delay: 0.025 * i,
+                        }}
+                        className="cp-word"
+                      >
+                        {word}&nbsp;
+                      </motion.span>
+                    ))}
+                  </motion.p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
             <div className="cp-arrows">
               <button
