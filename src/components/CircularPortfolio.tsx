@@ -194,6 +194,7 @@ export default function CircularPortfolio({
                 alt={item.title}
                 className="cp-image"
                 style={getImageStyle(index)}
+                loading="lazy"
               />
             ))}
           </div>
