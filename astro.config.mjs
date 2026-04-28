@@ -18,4 +18,12 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
   },
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
+  },
 });
