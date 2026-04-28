@@ -15,21 +15,27 @@ import CircularPortfolioSection from "../components/CircularPortfolioSection.ast
     >
       <a
         href="#home"
-        class="header-brand font-headline flex items-center gap-3 text-xl no-underline"
+        class="header-brand font-headline flex items-center gap-2 text-xl no-underline"
         aria-label="Bucks County Painters"
       >
-        <span
-          class="text-cream grid h-10 w-10 place-items-center rounded-full text-[22px] font-medium shadow-[inset_0_-6px_12px_rgba(0,0,0,0.2),0_2px_6px_rgba(14,42,43,0.2)]"
-          style="background: radial-gradient(circle at 30% 30%, var(--color-teal-400), var(--color-teal-800) 75%)"
-          >B</span
-        >
-        <span>
-          <strong class="font-headline font-normal tracking-[0.01em]"
-            >Bucks County Painters</strong
+        <img
+          src="/images/logo.svg"
+          alt="Bucks County Painters"
+          width="44"
+          height="44"
+          class="h-20 w-20 shrink-0 drop-shadow-[0_2px_6px_rgba(14,42,43,0.25)]"
+          loading="eager"
+          decoding="async"
+        />
+        <span class="text-center">
+          <strong class="font-headline font-bold tracking-[0.01em]"
+            >Bucks</strong
+          ><span class="font-headline font-light tracking-[0.01em]">County</span
           >
+
           <small
             class="text-warm-gray mt-0.5 block font-mono text-[10px] font-medium tracking-[0.22em] uppercase"
-            >Est. Doylestown · PA</small
+            >painters</small
           >
         </span>
       </a>
@@ -1133,7 +1139,7 @@ import CircularPortfolioSection from "../components/CircularPortfolioSection.ast
   }
   /* Over the video: light type. “Solid” state from ::before is ink. */
   .nav-header:not(.scrolled) .nav-link,
-  .nav-header:not(.scrolled) .header-brand strong {
+  .nav-header:not(.scrolled) .header-brand {
     color: var(--color-cream);
   }
   .nav-header:not(.scrolled) .header-brand small {
