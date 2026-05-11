@@ -118,7 +118,7 @@ import CircularPortfolioSection from "../components/CircularPortfolioSection.ast
 
   <!-- Mobile Menu (sibling of header for scroll-state selectors) -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+    <nav class="mobile-menu__nav pt-12" aria-label="Mobile navigation">
       <a href="#home" class="mobile-menu__link">Home</a>
       <button
         class="mobile-menu__link mobile-menu__accordion-btn"
@@ -1264,7 +1264,7 @@ import CircularPortfolioSection from "../components/CircularPortfolioSection.ast
   .mobile-menu.open {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0px);
     transition:
       opacity 0.3s ease,
       transform 0.3s ease,
