@@ -1,4 +1,3 @@
-"use client";
 import React, {
   useEffect,
   useRef,
@@ -36,6 +35,7 @@ function calculateGap(width: number) {
 }
 
 const SWIPE_MIN_PX = 50;
+const AUTOPLAY_DELAY_MS = 5000;
 
 export default function CircularPortfolio({
   items,
@@ -50,9 +50,6 @@ export default function CircularPortfolio({
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
-  const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
-    null,
-  );
 
   const itemsLength = useMemo(() => items.length, [items]);
   const activeItem = useMemo(() => items[activeIndex], [activeIndex, items]);
@@ -68,27 +65,27 @@ export default function CircularPortfolio({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (autoplay) {
-      autoplayIntervalRef.current = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % itemsLength);
-      }, 5000);
-    }
-    return () => {
-      if (autoplayIntervalRef.current)
-        clearInterval(autoplayIntervalRef.current);
-    };
-  }, [autoplay, itemsLength]);
-
   const handleNext = useCallback(() => {
+    if (itemsLength <= 1) return;
     setActiveIndex((prev) => (prev + 1) % itemsLength);
-    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
   }, [itemsLength]);
 
   const handlePrev = useCallback(() => {
+    if (itemsLength <= 1) return;
     setActiveIndex((prev) => (prev - 1 + itemsLength) % itemsLength);
-    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
   }, [itemsLength]);
+
+  useEffect(() => {
+    if (!autoplay || itemsLength <= 1) return;
+
+    const timeoutId = setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(handleNext);
+      });
+    }, AUTOPLAY_DELAY_MS);
+
+    return () => clearTimeout(timeoutId);
+  }, [activeIndex, autoplay, handleNext, itemsLength]);
 
   const onTouchStart = useCallback((e: React.TouchEvent) => {
     const t = e.touches[0];
@@ -136,8 +133,8 @@ export default function CircularPortfolio({
         zIndex: 3,
         opacity: 1,
         pointerEvents: "auto",
-        transform: "translateX(0px) translateY(0px) scale(1) rotateY(0deg)",
-        transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        transform: "translate3d(0px, 0px, 0) scale(1) rotateY(0deg)",
+        transition: "transform 0.8s cubic-bezier(.4,2,.3,1), opacity 0.8s ease",
       };
     }
     if (isLeft) {
@@ -145,8 +142,8 @@ export default function CircularPortfolio({
         zIndex: 2,
         opacity: 1,
         pointerEvents: "auto",
-        transform: `translateX(-${gap}px) translateY(-${maxStickUp}px) scale(0.92) rotateY(8deg)`,
-        transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        transform: `translate3d(-${gap}px, -${maxStickUp}px, 0) scale(0.92) rotateY(8deg)`,
+        transition: "transform 0.8s cubic-bezier(.4,2,.3,1), opacity 0.8s ease",
       };
     }
     if (isRight) {
@@ -154,15 +151,16 @@ export default function CircularPortfolio({
         zIndex: 2,
         opacity: 1,
         pointerEvents: "auto",
-        transform: `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.92) rotateY(-8deg)`,
-        transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        transform: `translate3d(${gap}px, -${maxStickUp}px, 0) scale(0.92) rotateY(-8deg)`,
+        transition: "transform 0.8s cubic-bezier(.4,2,.3,1), opacity 0.8s ease",
       };
     }
     return {
       zIndex: 1,
       opacity: 0,
       pointerEvents: "none",
-      transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+      transform: "translate3d(0px, 0px, 0) scale(0.86)",
+      transition: "transform 0.8s cubic-bezier(.4,2,.3,1), opacity 0.8s ease",
     };
   }
 

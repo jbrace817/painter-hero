@@ -180,6 +180,9 @@ const {
     object-fit: cover;
     border-radius: 0.75rem;
     box-shadow: 0 10px 30px rgba(14, 42, 43, 0.2);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
   }
 
   .cp-right {
